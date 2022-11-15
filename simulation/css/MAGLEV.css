@@ -1,0 +1,124 @@
+/*-----Document Name: MAGLEV .css
+       Author Name  : Piyali Chattopadhyay
+	                  RE VLABS, IIT KGP-------------*/
+					  
+					  
+.custombutton{
+	padding:3px 3px ;
+	width:150px;
+	height:30px;
+	color:white;
+	border: none;
+	border-radius:0px;
+	background-color: #4CAF50;
+	
+	}
+	.custombutton:hover{background-color: #CEEF9C;}
+	.custombutton:active{background-color: #8FBD4A;}
+	
+	.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: absolute;
+  
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+ 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+#anim{display:-webkit-box;-webkit-box-pack:center;opacity:1.5; duration: 4;}
+
+.bounce {
+  animation: bounce 2s ease 1s;
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
+
+
+/*.tooltip {
+  position: relative;
+  display: inline-block;
+  
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip 
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					  
