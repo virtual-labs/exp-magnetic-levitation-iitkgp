@@ -53,7 +53,7 @@
 	function back_img(){
 		
 	
-    document.getElementById('simu1').src= "images/Dialogbox_1.png";	
+    document.getElementById('simu1').src= "./images/DialogBox_1.png";	
     document.getElementById('btn1').style.display = "block";
     document.getElementById('btn2').style.display = "none";
 		document.getElementById('sin_btn').style.display  = "none";
