@@ -1,10 +1,9 @@
 ### Procedure
  <p>
-								<p><img alt="" src="./images/virtualplant.png" height="400" width="760"></p><br/>
+<p><img alt="" src="./images/virtualplant.png" height="400" width="760"></p><br/>
 								
-								<p style="text-align:center">[Fig 2: Experimental set-up for Magnetic Levitation Control simulation]</p><br>
-								<br>
-								<p><b>Steps to perform the simuation</b><br/>
+<p style="text-align:center">[Fig 2: Experimental set-up for Magnetic Levitation Control simulation]</p>
+<p><b>Steps to perform the simuation</b><br/>
 								
   <ol type="1">
   <li> Click on 'Maglev Real-Time Models' tab in the left section box. One dialogbox will be opened. </li><br/>
