@@ -7,5 +7,6 @@
 ## Developer and Integration Engineer
 | SrNo | Name | Designation | Department | Institute |
 | :---: | :---: | :---: | :---: | :---: |
-| 1 | **Piyali Chattopadhyay** | Research Engineer | Department of Electrical Engineering | IIT Kharagpur | 
-| 2 | **Aditya Kameswara Rao Nandula** | Senior Project Officer | Department of Mechanical Engineering | IIT Kharagpur |
+| 1 | **Piyali Chattopadhyay** | Project Scientist | Department of Electrical Engineering | IIT Kharagpur | 
+| 2 | **Aditya Kameswara Rao Nandula** |Senior Project Scientist  | Department of Mechanical Engineering | IIT Kharagpur |
+  3| **Subhasis Mahata** | Senior Project Scientist | Department of Mechanical Engineering | IIT Kharagpur |
