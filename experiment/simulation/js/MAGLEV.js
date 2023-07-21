@@ -431,7 +431,7 @@ function drop(ev) {
 	
 	for( var t=0; t<=totalT; t+=0.1){
 	
-	for( var t=0; t<=stepT;t++ ){////20 sec is sample time
+	for( var t=0; t<=stepT;t+=0.1 ){////20 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -541,7 +541,7 @@ function drop(ev) {
 	
 	for( var t=0; t<=totalT;t+=0.1){
 	
-	for( var t=0; t<=stepT;t++){////20 sec is sample time
+	for( var t=0; t<=stepT;t+=0.1){////20 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -894,7 +894,7 @@ document.getElementById("exportChart").style.display = "block";
 	
 	for( var t=0; t<=totalT;t+=0.1){
 	
-	for( var t=0; t<= math.divide(totalT,4) ; t++){////20 sec is sample time
+	for( var t=0; t<= math.divide(totalT,4) ; t+=0.1){////20 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -933,7 +933,7 @@ document.getElementById("exportChart").style.display = "block";
 	 //document.write (totalscndprt);
 	 }
 	 
-	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4) ; t++){////20 sec is sample time
+	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4) ; t+=0.1){////20 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -1046,7 +1046,7 @@ document.getElementById("result").style.display = "block";
 	
 	for( var t=0; t<=totalT; t+=0.1){
 	
-	for( var t=0; t<= math.divide(totalT,4);t++ ){////20 sec is sample time
+	for( var t=0; t<= math.divide(totalT,4);t+=0.1 ){////20 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -1084,7 +1084,7 @@ document.getElementById("result").style.display = "block";
 	 
 	 //document.write (totalscndprt);
 	 }
-	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4);t++ ){////25 sec is sample time
+	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4);t+=0.1 ){////25 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
