@@ -48,8 +48,10 @@ where &Delta; x is the small deviation from the equilibrium position x<sub>0</su
 A linearization is done at the equilibrium point of x<sub>0</sub> = -1.5 v (the position is expressed in volts), i<sub>0</sub> = 0.8 A
 
 The linearization steps are the following:
+
 								
 $$\ddot{x} = -( \frac{\delta f(i,x)}{\delta i} |_{i_0,x_0} \Delta i + \frac{\delta f(i,x)}{\delta x} |_{i_0,x_0} \Delta x ),$$
+
 								
 $$s^2\Delta x = -( k_i \Delta i -k_x \Delta x ),$$
 								

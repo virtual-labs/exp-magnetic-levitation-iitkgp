@@ -6,6 +6,7 @@
 							
 <div align="center">
 <img class="img-fluid" src="./images/vplant.png" >
+
 <span>[Fig 2: Experimental set-up for Magnetic Levitation Control simulation]</span>
 </div>								
 								
