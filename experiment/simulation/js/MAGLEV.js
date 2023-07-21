@@ -1179,7 +1179,16 @@ document.getElementById("result").style.display = "block";
 	}
 	
 	
-	
+	function csqrf(){
+
+		if ( document.getElementById('changeplot').value == 2){
+		
+		var Ttime = document.getElementById('totaltime').value;
+		document.getElementById('sqrfreq').value = math.divide(1,math.divide(Ttime,2));
+		
+		}
+		
+		}
 	
 	
 	
