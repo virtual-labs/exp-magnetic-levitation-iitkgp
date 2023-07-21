@@ -1,12 +1,11 @@
 ## References
-#### Books
-<p>1)Farid Golnaraghi, Benjamin C. Kuo - Automatic Control Systems (2009, Wiley)</p>
-<p>2)Katsuhiko Ogata - Modern Control Engineering (2010, Prentice Hal)</p>
+#### Book and Paper
+1) Farid Golnaraghi, Benjamin C. Kuo - Automatic Control Systems (2009, Wiley)
+
+2) "Design and implementation of a 2-DOF PID compensation for magnetic levitation systems" - Arun Ghosh, T. Rakesh Krishnan, Pailla Tejaswy, Abhisek Mandal, Jatin K. Pradhan, Subhakant Ranasingh
+									
 
 
-#### Video Lectures
-<p><a href="https://www.youtube.com/watch?v=tJNaPt5aPmg" target="_blank">Click here for NPTEL Video Lecture</a></p>
-									<p><a href="https://www.youtube.com/watch?v=Av86LcNuiMQ" target="_blank">Click here for Video Lecture</a></p>
 
 # People
 
@@ -21,4 +20,4 @@
 
 SrNo | Name | VLabs Developer or Integration Engineer | Designation | Department| Institute
 :--|:--|:--|:--|:--|:--|
-1 | **Piyali Chattopadhyay** | Developer & Integration | Research Engineer | Department of Electrical Engineering | IIT Kharagpur | 
+1 | **Piyali Chattopadhyay** | Developer & Integration | Project Scientist | Department of Electrical Engineering | IIT Kharagpur | 
