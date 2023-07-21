@@ -3,7 +3,7 @@
 	                  RE VLABS, IIT KGP-------------*/
 					  
 					  
-.custombutton{
+/*.custombutton{
 	padding:3px 3px ;
 	width:150px;
 	height:30px;
@@ -51,7 +51,403 @@
 
 .dropdown:hover .dropdown-content {display: block;}
 
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
+
+.img-container {
+    display: inline-block;
+    position: relative;
+}
+
+ #b1{
+position: absolute;
+    top: 0%;
+    left: 84%;
+    width: 4.5%;
+    height: 7%;
+ } 
+
+#c1{
+position: absolute;
+    top: 0.5%;
+    left: 54%;
+    width: 4%;
+    height: 6%;
+ }
+ #totaltime{
+position: absolute;
+    top: 1.2%;
+    left: 58.5%;
+    width: 7%;
+    height: 5%;
+ }
+
+#run_btn{
+display:none;
+position: absolute;
+    top: 2%;
+    left: 51%;
+    width: 3%;
+    height: 4%;
+ }  
+
+#m_scope{
+display: none;
+    position: absolute;
+    top: 52%;
+    left: 90%;
+    width: 8%;
+    height: 11%;
+ } 
+
+#v_scope{
+display: none;
+    position: absolute;
+    top: 71%;
+    left: 58%;
+    width: 8%;
+    height: 11%;
+ } 
+
+#step_block{
+position:absolute;
+display:none;
+width:20%;
+height:20%;
+left:20%;
+top:20%;
+border:3px solid blue;
+border-top-width:10px;
+border-radius:3px;	
+}
+
+#sin_block{
+position:absolute;
+display:none;
+width:20%;
+height:20%;
+left:20%;
+top:20%;
+border:3px solid blue;
+border-top-width:10px;
+border-radius:3px;	
+}
+
+#sqr_block{
+position:absolute;
+display:none;
+width:20%;
+height:20%;
+left:20%;
+top:20%;
+border:3px solid blue;
+border-top-width:10px;
+border-radius:3px;	
+}
+
+#PID_block{
+position:absolute;
+display:none;
+width:20%;
+height:20%;
+left:20%;
+top:20%;
+border:3px solid blue;
+border-top-width:10px;
+border-radius:3px;	
+}
+
+#sin_btn{
+	
+
+    display: block;
+    position: absolute;
+    width: 6%;
+    height: 8%;
+    left: 2.5%;
+    top: 54%;
+
+}
+
+#step_btn{
+	
+display: block;
+    position: absolute;
+    width: 6%;
+    height: 8%;
+    left: 2.5%;
+    top: 42%;
+
+}
+#sqr_btn{
+	
+/*visibility:hidden;*/
+display: block;
+    position: absolute;
+    width: 6%;
+    height: 8%;
+    left: 2.5%;
+    top: 67%;
+
+}
+
+#PID_btn{
+	
+display: block;
+    position: absolute;
+    width: 17%;
+    height: 18.2%;
+    left: 50.5%;
+    top: 17%;
+
+}
+#step_block{
+position: absolute;
+    width: 35%;
+    height: 38%;
+    top: 81%;
+    left: 1%;	
+}
+#stepsize{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 28%;
+    left: 4%;	
+}
+#steptime{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 59%;
+    left: 4%;	
+}
+
+#ssp{
+position: absolute;
+    width: 40%;
+    height: 15%;
+    top: 27%;
+    left: 35%;
+	
+}
+#stp{
+position: absolute;
+    width: 60%;
+    height: 14%;
+    top: 57%;
+    left: 29%;
+}	
+
+#sin_block{
+position: absolute;
+    width: 35%;
+    height: 38%;
+    top: 81%;
+    left: 1%;	
+}
+#sinamp{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 28%;
+    left: 4%;	
+}
+#sinfreq{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 59%;
+    left: 4%;	
+}
+
+#sap{
+position: absolute;
+    width: 40%;
+    height: 15%;
+    top: 27%;
+    left: 35%;
+	
+}
+#sfp{
+position: absolute;
+    width: 60%;
+    height: 14%;
+    top: 57%;
+    left: 29%;
+}	
+
+#sqr_block{
+position: absolute;
+    width: 35%;
+    height: 38%;
+    top: 81%;
+    left: 1%;	
+}
+#sqramp{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 28%;
+    left: 4%;	
+}
+#sqrfreq{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 59%;
+    left: 4%;	
+}
+
+#sqap{
+position: absolute;
+    width: 40%;
+    height: 15%;
+    top: 27%;
+    left: 35%;
+	
+}
+#sqfp{
+position: absolute;
+    width: 60%;
+    height: 14%;
+    top: 57%;
+    left: 29%;
+}	
+
+
+
+#PID_block{
+position: absolute;
+    width: 42%;
+    height: 35%;
+    top: 77%;
+    left: -7%;	
+}
+#kp{
+position: absolute;
+    width: 27%;
+    height: 15%;
+    top: 28%;
+    left: 4%;	
+}
+#ki{
+position: absolute;
+    width: 27%;
+    height: 15%;
+    top: 48%;
+    left: 4%;	
+}
+#kd{
+position: absolute;
+    width: 27%;
+    height: 15%;
+    top: 68%;
+    left: 4%;	
+}
+
+#kpp{
+position: absolute;
+    width: 14%;
+    height: 15%;
+    top: 27%;
+    left: 33%;
+	
+}
+#kip{
+position: absolute;
+    width: 14%;
+    height: 15%;
+    top: 48%;
+    left: 33%;
+}	
+#kdp{
+position: absolute;
+    width: 14%;
+    height: 15%;
+    top: 68%;
+    left: 33%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#Redball{
+position: absolute;
+   /* width: 15%;
+    height: 9%;
+    left: 42%;
+    top: 41%;
+}*/
+#ball_container{
+	
+position: absolute;
+    top: 25%;
+    left: 38%;
+    width: 21%;
+    height: 11%;
+    border: 1px dotted none;
+    z-index: 1;
+	
+}
+#red_div{
+	
+position: absolute;
+    top: 39%;
+    left: 38%;
+    width: 21%;
+    height: 11%;
+    border: 1px dotted none;
+    z-index: 1;
+	
+}
+
+/*-----------------------------for ball fall------------------------*/
+.ballfall{
+	animation:ballfall 1.5s linear forwards;	
+}
+
+@keyframes ballfall {
+  from {top: 25%;}/*background-color:white}*/
+  to   {top: 39%;}/*background-color:#0db4fd}*/
+}
+
+/*-----------------------------for div up------------------------*/
+.divup{
+	animation:divup 1.5s linear forwards;	
+}
+
+@keyframes divup {
+  from {top: 39%;}/*background-color:white}*/
+  to   {top: 25%;}/*background-color:#0db4fd}*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #anim{display:-webkit-box;-webkit-box-pack:center;opacity:1.5; duration: 4;}
 
@@ -66,28 +462,7 @@
 
 
 
-/*.tooltip {
-  position: relative;
-  display: inline-block;
-  
-}
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
 
-  /* Position the tooltip 
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}*/
 
 
 

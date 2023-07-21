@@ -7,15 +7,17 @@
 <b>Discipline | <b> Electrical Engineering 
 :--|:--|
 <b> Lab | <b> **Control and Instrumentation Lab**
-<b> Experiment|     <b> **Magnetic Levitation Control System and Experiment 2**
+<b> Experiment|     <b> **Study and operation of Magnetic Levitation and Experiment 2**
 
 
 ### About the Experiment 
+**System description**
 
-The magneticlevitation(MAGLEV)is a non-contacttechnology.it reduces the cost of maintenance as there is no friction and so the energy efficiency is high.This technology is the future in
-transportation,non-contact actuators,precision engineering,non-contact structures,satellitelaunching,etc.MLS considered for modeling consists of a ferromagnetic ball suspended in a voltage controlled magnetic field. Ferromagnetic core coil acts as actuator, sensor determining the position of ball with respect to core coil,
-                                ferromagnetic ball has single degree of freedom.  MLS  consists of magnetic levitation mechanical unit (electromagnet, sensors, and ferromagnetic ball) with a computer
-                                interface card, a signal conditioning unit, connecting cables.
+The magnetic levitation (MAGLEV) is a non-contact technology . It reduces the cost of maintenance as there is no friction and so the energy	efficiency is high. This technology is the future in transportation, non-contact actuators, precision engineering, non contact structures,satellite launching, etc. However, the open loop MAGLEV system is highly nonlinear and highly unstable and therefore, designing a simple and effective controller for such a system is very challenging.
+					
+<div align="center">
+<img class="img-fluid"  src="./images/intro.png" alt="">
+</div>
 
 <b>Name of Developer | <b> **Prof. Alok Kanti Deb**
 :--|:--|
@@ -28,4 +30,4 @@ transportation,non-contact actuators,precision engineering,non-contact structure
 
 SrNo | Name | VLabs Developer or Integration Engineer | Designation | Department| Institute
 :--|:--|:--|:--|:--|:--|
-1 | **Piyali Chattopadhyay** | Developer & Integration | Research Engineer | Department of Electrical Engineering | IIT Kharagpur | 
+1 | **Piyali Chattopadhyay** | Developer & Integration | Project Scientist | Department of Electrical Engineering | IIT Kharagpur | 

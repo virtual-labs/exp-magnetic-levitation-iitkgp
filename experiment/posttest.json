@@ -9,28 +9,16 @@
         "c": "Hall effect sensors",
         "d": "None of the above"
       },
-      "explanations": {
-        "a": "You have chosen wrong answer",
-        "b": "You have chosen correct answer",
-        "c": "You have chosen wrong answer",
-        "d": "You have chosen wrong answer"
-      },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
       "question": "What is the disadvantage of proportional controller?",
       "answers": {
-        "a": "Provides a constant steady state error",
+        "a": "Provides a constant steady state error  ",
         "b": "Improves stability of the system",
         "c": "Improves steady state error",
         "d": "None of the above"
-      },
-      "explanations": {
-        "a": "You have chosen correct answer",
-        "b": "You have chosen wrong answer",
-        "c": "You have chosen wrong answer",
-        "d": "You have chosen wrong answer"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
@@ -38,33 +26,21 @@
     {
       "question": "Which of the following controllers improves steady state error and also stability of the system?",
       "answers": {
-        "a": "P controller",
-        "b": "PI controller",
+        "a": "P controller ",
+        "b": "PI controller ",
         "c": "PD controller",
-        "d": "All of them"
-      },
-      "explanations": {
-        "a": "You have chosen wrong answer",
-        "b": "You have chosen correct answer",
-        "c": "You have chosen wrong answer",
-        "d": "You have chosen wrong answer"
+        "d": "All of the above "
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "A condition where integral control action drives the output of a controller into saturation is called:",
+      "question": "A condition where integral control action drives the output of a controller into saturation is called",
       "answers": {
-        "a": "self-bias",
-        "b": "repeat",
-        "c": "wind-up",
-        "d": "noise"
-      },
-      "explanations": {
-        "a": "You have chosen wrong answer",
-        "b": "You have chosen wrong answer",
-        "c": "You have chosen correct answer",
-        "d": "You have chosen wrong answer"
+        "a": "Self-bias",
+        "b": " Repeat  ",
+        "c": "Wind-up",
+        "d": " Noise "
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
@@ -72,32 +48,67 @@
     {
       "question": "The controller output when the error is zero is known as",
       "answers": {
-        "a": "Bias",
+        "a": " Bias ",
         "b": "Error",
-        "c": "Both",
-        "d": "None"
+		"c": "Both the above",
+        "d": "None of them"
+        
       },
-      "explanations": {
-        "a": "You have chosen correct answer",
-        "b": "You have chosen wrong answer",
-        "c": "You have chosen wrong answer",
-        "d": "You have chosen wrong answer"
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The magnetic force, responsible for magnetic levitation is__",
+      "answers": {
+        "a": "  Magnetic attraction force ",
+        "b": " Magnetic repulsion force",
+        "c": "None of these",
+        "d": " Both of a and b"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The MAGLEV is a_____ plant",
+      "answers": {
+        "a": "SISO ",
+        "b": "SIMO",
+        "c": "MIMO",
+        "d": " None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The ________ part of a PID controller is very sensitive to noise",
+      "answers": {
+        "a": "Derivative ",
+        "b": "Integral",
+        "c": "Both a and b",
+        "d": "None of the above "
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }, 
+    {
+      "question": "In a magnetic ball levitation system the ferromagnetic core coil acts as an actuator.",
+      "answers": {
+        "a": " True ",
+        "b": "False"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In a magnetic levitation system , the propulsion force is to , ",
+      "answers": {
+        "a": " Push moving part forward ",
+        "b": " lift up the moving part",
+        "c": " Both of the above ",
+        "d": "None of the above"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
   ]
 }

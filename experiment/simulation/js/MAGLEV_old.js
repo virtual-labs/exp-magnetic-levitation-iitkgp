@@ -4,7 +4,7 @@
 					  
 		 		window.onload= function(){
 					
-					alert('Laptop or desktop view is preferable or rotate the screen for better view ');
+					alert('Rotate the screen if it is not visible properly');
 					
 				}	  
 
@@ -28,62 +28,29 @@
 	}
 	function show_sinbox(){
 		document.getElementById('simu1').src = "images/dbox3_sin_input.png";
-		document.getElementById('changeplot').value = 1;
+		document.getElementById('changeplot').value = "1";
 	}
 	function show_sqrbox(){
 		document.getElementById('simu1').src = "images/dbox3_square_input.png";
-		document.getElementById('changeplot').value = 2;
+		document.getElementById('changeplot').value = "2";
 	}	
 	function show_stepbox(){
 		document.getElementById('simu1').src = "images/dbox3_step_input.png";
-		document.getElementById('changeplot').value = 0;
+		document.getElementById('changeplot').value = "0";
 	}	
 	function show_PID_block(){
-		document.getElementById('PID_block').style.display  = "block";		
+		document.getElementById('PID_block').style.display  = "block";
+		
 	}
-	
     function hide_PID(){
 	document.getElementById('PID_block').style.display  = "none";			
 	}	
-	
-	function show_step(){
-		document.getElementById('step_block').style.display  = "block";
-		document.getElementById('sin_block').style.display  = "none";
-		document.getElementById('sqr_block').style.display  = "none";
-		
-	}
-	
-	function hide_step(){
-	document.getElementById('step_block').style.display  = "none";			
-	}
-	
-	function show_sin(){
-		document.getElementById('sin_block').style.display  = "block";
-		document.getElementById('step_block').style.display  = "none";
-		document.getElementById('sqr_block').style.display  = "none";
-	}
-	
-	function hide_sin(){
-	document.getElementById('sin_block').style.display  = "none";			
-	}	
-	
-	function show_sqr(){
-		document.getElementById('sqr_block').style.display  = "block";
-		document.getElementById('sin_block').style.display  = "none";
-		document.getElementById('step_block').style.display  = "none";
-	}
-	
-	function hide_sqr(){
-	document.getElementById('sqr_block').style.display  = "none";			
-	}	
-	
-	
 	function IR_ON(){
 	document.getElementById('run_btn').src = "images/pause.png";		
 		
 	}
 	
-	/*function back_img(){
+	function back_img(){
 		
 	
     document.getElementById('simu1').src= "images/dbox3_sin_input.png";	
@@ -92,7 +59,7 @@
 		//document.getElementById('sin_btn').style.display  = "none";
 		//document.getElementById('sqr_btn').style.display  = "none";
 		//document.getElementById('step_btn').style.display  = "none";
-		//document.getElementById('PID_btn').style.display  = "none";
+		document.getElementById('PID_btn').style.display  = "none";
         //document.getElementById('IB').style.display  = "none";
 		//document.getElementById('CT').style.display  = "none";
 		document.getElementById('run_btn').style.display  = "none";
@@ -108,7 +75,7 @@
 		document.getElementById('IB').style.display  = "block";
 		document.getElementById('CT').style.display  = "block";
 		document.getElementById('changeplot').value = 1 ;
-	}*/
+	}
 	
 	function IB(){
 		setTimeout(function(){
@@ -128,37 +95,27 @@
 	function m_scope(){
 	//if(document.getElementById('simu1').src == "images/dbox3_step_input.png"){
      //document.getElementById('chartContainer').style.display = "block";
-	 
     var a = document.getElementById('changeplot').value;
-    if(document.getElementById('changeplot').value == 0){	
+    if(a==0){	
 	 PID_STEP();
-	 
 	}	
-	else if(document.getElementById('changeplot').value == 1){
+	else if(a==1){
      PID_SINE();
-	 
-	}
-	else if(document.getElementById('changeplot').value == 2){
-     PID_SQR();
-	}	
+	}			
 	}
 	
 	function v_scope(){
 	
     var a = document.getElementById('changeplot').value;
-    if(document.getElementById('changeplot').value == 0){	
+    if(a==0){	
 	 PID_STEP_VOLT();
-	 
 	}	
-	else if(document.getElementById('changeplot').value == 1){
+	else if(a==1){
      PID_SINE_VOLT();
-	 
+	}			
 	}
-	else if(document.getElementById('changeplot').value == 2){
-     PID_SQR_VOLT();
-	 
-	}		
-	}
+	
+/////////////////All functions related to Ball///////////////////////////
 	
 /////////////////Function for bouncing the ball////////////////////
 function ball_Anim(){
@@ -204,10 +161,7 @@ setTimeout(function() {
 	document.getElementById('red_div').classList.remove("ballfall");
   document.getElementById('ball_container').classList.remove("divup");
 }, 8000);
-
-setTimeout (function(){
-document.getElementById('run_btn').src = "images/run.png";
-},10010);	
+clearTimeout(100);	
 }
 
 function ballfall2(){
@@ -220,10 +174,7 @@ setTimeout(function() {
   document.getElementById('ball_container').classList.add("divup");
     
 }, 8000);
-
-setTimeout (function(){
-document.getElementById('run_btn').src = "images/run.png";
-},10010);	
+clearTimeout(100);	
 }
 
 
@@ -241,26 +192,86 @@ function drop(ev) {
 	
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");  
+  ev.target.appendChild(document.getElementById(data));
   
-  
-  if(data == "Redball" && ev.target.id == "ball_container" && document.getElementById('run_btn').src.match('images/pause.png')){
-	  
-	ev.target.appendChild(document.getElementById(data));
+  if(data == "Redball" && ev.target.id == "ball_container"){
 	ball_Anim();
 	ballfall();	
   }
-  else if(data == "Redball" && ev.target.id == "red_div" && document.getElementById('run_btn').src.match('images/pause.png')){
-	ev.target.appendChild(document.getElementById(data));
+  else if(data == "Redball" && ev.target.id == "red_div"){
 	ball_Anim();
 	ballfall2();	
   }
-  else{
-	  
-	  alert("Click on the 'Run' button first to activate IR sensor");
-	
+  
+  
+}
+/*var obj, x, y, prev_x, prev_y;
+
+function drag(e) {
+  // Yep, use the object I just clicked on.
+  obj = e.target;
+  // Set current X coordinate minus distance left from offsetParent node.
+  prev_x = x - obj.offsetLeft;
+  // Set current Y coordinate minus distance top from offsetParent node.
+  prev_y = y - obj.offsetTop;
+  // Change the object's color so it looks like it's usable/moveable.
+  obj.style.background = 'none';
+  
+}
+
+function move(e) {
+  // Always track and record the mouse's current position.
+  if (e.pageX) {
+    x = e.pageX; // X coordinate based on page, not viewport.
+    y = e.pageY; // Y coordinate based on page, not viewport.
+  }
+//  else if (e.clientX) {
+//    x=clientX; // X coordinate based on viewport.
+//    y=clientY; // Y coordinate based on viewport.
+//  }
+
+  // If the object specifically is selected, then move it to the X/Y coordinates that are always being tracked.
+  if(obj) {
+    obj.style.left = (x - prev_x) + '%';
+    obj.style.top = (y - prev_y) + '%';
   }
   
 }
+
+function drop() {
+  // Revert to the default css style.
+  //obj.style.background = '';
+  // Remove the attached event from the element so it doesn't keep following your mouse. :)
+  var ball_left= document.getElementById('Redball').offsetLeft;
+  var ball_top=  document.getElementById('Redball').offsetTop;
+  
+  if((ball_left >= 500 && ball_left<=540) && (ball_top >= 162 && ball_top<=168)){
+	  
+  obj = false;
+  alert('Proper Positioning ');//current ball position='+ball_left +'and balltop'+ball_top);
+  ball_Anim();
+   ballfall();
+  
+}
+else{
+	document.getElementById('Redball').style.left = "530px";
+	document.getElementById('Redball').style.top = "250px";
+	
+}
+
+
+
+
+}
+// Make a specific element movable
+
+document.getElementById('Redball').onmousedown = drag;
+document.onmousemove = move;
+document.getElementById('Redball').onmouseup = drop;
+*/
+
+
+
 ///////////////////////////PD+PID////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -423,15 +434,11 @@ function drop(ev) {
 	var dataPoints=[];
 	var dataOPPoints=[];
 	
-	var totalT = document.getElementById('totaltime').value;
-	var stepT  = document.getElementById('steptime').value;
-	var vp = document.getElementById('stepsize').value;
 	
 	
+	for( var t=0; t<=50;t+=0.1){
 	
-	for( var t=0; t<=totalT; t+=0.1){
-	
-	for( var t=0; t<=stepT;t+=0.1 ){////20 sec is sample time
+	for( var t=0; t<=20;t+=0.1){////20 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -448,19 +455,19 @@ function drop(ev) {
 	
 	var totalfrstprt_pid = math.multiply(frstcomp_pid , scndcomp_pid);
 	
-	var exp3_pid = math.pow(math.e,math.multiply(-1.31345 , t));
+	var exp3_pid = math.pow(math.e,(-1.31345 * t));
 	var totalscndprt_pid = math.multiply(0.443072,exp3_pid);	
 	
 	
-	y[t]= vp;//assuming step size 1v.Input plot
-	yop[t]= math.multiply(vp,math.add(totalfrstprt_pid,totalscndprt_pid,1));//assuming step size 1v.Output plot
+	y[t]= 1;//assuming step size 1v.Input plot
+	yop[t]=math.add(totalfrstprt_pid,totalscndprt_pid,1);//assuming step size 1v.Output plot
 	
 	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
 	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
 	 
 	 //document.write (totalscndprt);
 	 }
-	 for( var t= stepT; t<= totalT;t++){////20 sec is sample time
+	 for( var t=20; t<=50;t+=0.1){////20 sec is sample time
 	
 	y[t]= 0;//assuming final value of 0v.Input plot
 	yop[t]=0;//assuming final value of 0v.Output plot
@@ -470,7 +477,6 @@ function drop(ev) {
 	 //document.write (totalscndprt);
 	 }
 	}
-	document.getElementById('plotbucket').style.display  = "block"; 
     document.getElementById('chartContainer').style.display  = "block"; 	
 	var chart = new CanvasJS.Chart("chartContainer",
     {
@@ -482,14 +488,14 @@ function drop(ev) {
       },
 	  
 	  axisX:{
-        interlacedColor: "#DFDEDE",
+        interlacedColor: "#B2F9FA",
         title: "Time(Sec)"
       },
     axisY: [
 	      {/////output Y axis
             title: "Amplitude(m)",
 			
-			//maximum:0.03,
+			maximum:0.03,
         },
 		{/////input y axis invisible
 			gridThickness: 0,
@@ -503,13 +509,13 @@ function drop(ev) {
 	data: [
       {        
         type: "spline",
-		color:"black",
+		color:"109DB6",
         dataPoints:dataOPPoints
 	
        },
        {        
         type: "spline",
-		color:"red",
+		color:"#F9CC1D",
         dataPoints:dataPoints
 	
        },
@@ -517,7 +523,6 @@ function drop(ev) {
 	});
 
 	chart.render();	
-	document.getElementById("result").style.display = "block";
 	document.getElementById("exportChart").style.display = "block";
 	document.getElementById("exportChart").addEventListener("click",function(){
 	chart.exportChart({format: "jpg"})});	
@@ -533,15 +538,11 @@ function drop(ev) {
 	var dataPoints=[];
 	var dataOPPoints=[];
 	
-	var totalT = document.getElementById('totaltime').value;
-	var stepT  = document.getElementById('steptime').value;
-	var vp = document.getElementById('stepsize').value;
 	
 	
+	for( var t=0; t<=50;t+=0.1){
 	
-	for( var t=0; t<=totalT;t+=0.1){
-	
-	for( var t=0; t<=stepT;t+=0.1){////20 sec is sample time
+	for( var t=0; t<=20;t+=0.1){////20 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -558,19 +559,19 @@ function drop(ev) {
 	
 	var totalfrstprt_pid = math.multiply(frstcomp_pid , scndcomp_pid);
 	
-	var exp3_pid = math.pow(math.e,math.multiply(-1.31345 , t));
+	var exp3_pid = math.pow(math.e,(-1.31345 * t));
 	var totalscndprt_pid = math.multiply(0.443072,exp3_pid);	
 	
 	
-	y[t]= vp;//assuming step size 1v.Input plot
-	yop[t]= math.multiply(vp,math.add(totalfrstprt_pid,totalscndprt_pid,1));//assuming step size 1v.Output plot
+	y[t]= 1;//assuming step size 1v.Input plot
+	yop[t]=math.add(totalfrstprt_pid,totalscndprt_pid,1);//assuming step size 1v.Output plot
 	
 	dataPoints.push({x:(t), y:(y[t]*1000)});///y[t] is in v
 	dataOPPoints.push({x:(t), y:(yop[t]*1000)});///yop[t] is in v	 
 	 
 	 //document.write (totalscndprt);
 	 }
-	 for( var t=stepT; t<=totalT;t++){////20 sec is sample time
+	 for( var t=20; t<=50;t+=0.1){////20 sec is sample time
 	
 	y[t]= 0;//assuming final value of 0v.Input plot
 	yop[t]=0;//assuming final value of 0v.Output plot
@@ -579,8 +580,7 @@ function drop(ev) {
 	 
 	 //document.write (totalscndprt);
 	 }
-	}
-document.getElementById('plotbucket').style.display  = "block"; 	
+	} 
 document.getElementById('chartContainer').style.display  = "block"; 	
 	var chart = new CanvasJS.Chart("chartContainer",
     {
@@ -592,14 +592,14 @@ document.getElementById('chartContainer').style.display  = "block";
       },
 	  
 	  axisX:{
-        interlacedColor: "#DFDEDE",
+        interlacedColor: "#B2F9FA",
         title: "Time(Sec)"
       },
     axisY: [
 	      {/////output Y axis
             title: "Amplitude(mv)",
 			
-			//maximum:6,
+			//maximum:2,
         },
 		{/////input y axis invisible
 			gridThickness: 0,
@@ -613,21 +613,20 @@ document.getElementById('chartContainer').style.display  = "block";
 	data: [
       {        
         type: "spline",
-		color:"black",
+		color:"109DB6",
         dataPoints:dataOPPoints
 	
        },
        {        
         type: "spline",
-		color:"red",
+		color:"#F9CC1D",
         dataPoints:dataPoints
 	
        },
       ]	
 	});
 
-	chart.render();
-document.getElementById("result").style.display = "block";	
+	chart.render();	
 	document.getElementById("exportChart").style.display = "block";
 	document.getElementById("exportChart").addEventListener("click",function(){
 	chart.exportChart({format: "jpg"})});	
@@ -646,13 +645,9 @@ document.getElementById("result").style.display = "block";
 	var dataPoints=[];
 	var dataOPPoints=[];
 	
-	var totalT = document.getElementById('totaltime').value;
-	var sinv  = document.getElementById('sinamp').value;
-	var sinf = document.getElementById('sinfreq').value;
 	
 	
-	
-	for( var t=0; t<=totalT;t+=0.1){	
+	for( var t=0; t<=50;t+=0.1){	
 	
 	var num1_pid = math.complex(0.219288 ,0.0204671 );
 	 var num2_pid = math.complex(0  , -3.142 );
@@ -690,10 +685,10 @@ document.getElementById("result").style.display = "block";
 	var epow5_pid = math.multiply(-1.31345,t);
 	var exp5_pid = math.pow(math.e,epow5_pid);
 	var totalthrdprt_pid = math.multiply(-0.0501799,exp5_pid);	
-	var gain = math.divide(sinv,2);
 	
-	y[t]= math.multiply(gain , math.sin(math.multiply(2,math.pi, sinf ,t)));//assuming sine amp of 0.5v .Input plot
-	var op = math.multiply(math.multiply(2,math.pi,sinf,gain),(math.add(totalfrstprt_pid,totalscndprt_pid,totalthrdprt_pid)));//output sine
+	
+	y[t]= 0.5 * Math.sin(2*Math.PI*0.5*t);//assuming sine amp of 2v p-p.Input plot
+	var op = math.multiply(1.571,(math.add(totalfrstprt_pid,totalscndprt_pid,totalthrdprt_pid)));//output sine
 	yop[t] = op.re;
 	
 	
@@ -703,7 +698,6 @@ document.getElementById("result").style.display = "block";
 	 
 	 
 	}
-	document.getElementById('plotbucket').style.display  = "block"; 
  	document.getElementById('chartContainer').style.display  = "block"; 
 	var chart = new CanvasJS.Chart("chartContainer",
     {
@@ -715,14 +709,14 @@ document.getElementById("result").style.display = "block";
       },
 	  
 	  axisX:{
-        interlacedColor: "#DFDEDE",
+        interlacedColor: "#B2F9FA",
         title: "Time(Sec)"
       },
     axisY: [
 	      {/////output Y axis
             title: "Amplitude(m)",
 			
-			//maximum:0.03,
+			maximum:0.03,
         },
 		{/////input y axis invisible
 			gridThickness: 0,
@@ -736,13 +730,13 @@ document.getElementById("result").style.display = "block";
 	data: [
       {        
         type: "spline",
-		color:"black",
+		color:"109DB6",
         dataPoints:dataOPPoints
 	
        },
        {        
         type: "spline",
-		color:"red",
+		color:"#F9CC1D",
         dataPoints:dataPoints
 	
        },
@@ -750,7 +744,6 @@ document.getElementById("result").style.display = "block";
 	});
 
 	chart.render();
-	document.getElementById("result").style.display = "block";
 document.getElementById("exportChart").style.display = "block";
 	document.getElementById("exportChart").addEventListener("click",function(){
 	chart.exportChart({format: "jpg"})});	
@@ -766,12 +759,8 @@ document.getElementById("exportChart").style.display = "block";
 	var dataOPPoints=[];
 	
 	
-	var totalT = document.getElementById('totaltime').value;
-	var sinv  = document.getElementById('sinamp').value;
-	var sinf = document.getElementById('sinfreq').value;
 	
-	
-	for( var t=0; t<=totalT;t+=0.1){	
+	for( var t=0; t<=50;t+=0.1){	
 	
 	var num1_pid = math.complex(0.219288 ,0.0204671 );
 	 var num2_pid = math.complex(0  , -3.142 );
@@ -809,10 +798,10 @@ document.getElementById("exportChart").style.display = "block";
 	var epow5_pid = math.multiply(-1.31345,t);
 	var exp5_pid = math.pow(math.e,epow5_pid);
 	var totalthrdprt_pid = math.multiply(-0.0501799,exp5_pid);	
-	var gain = math.divide(sinv,2);
 	
-	y[t]= math.multiply(gain , math.sin(math.multiply(2,math.pi, sinf ,t)));//assuming sine amp of 1v p-p.Input plot
-	var op = math.multiply(math.multiply(2,math.pi,sinf,gain),(math.add(totalfrstprt_pid,totalscndprt_pid,totalthrdprt_pid)));//output sine
+	
+	y[t]= 0.5 * Math.sin(2*Math.PI*0.5*t);//assuming sine amp of 1v p-p.Input plot
+	var op = math.multiply(1.571,(math.add(totalfrstprt_pid,totalscndprt_pid,totalthrdprt_pid)));//output sine
 	yop[t] = op.re;
 	
 	
@@ -822,7 +811,6 @@ document.getElementById("exportChart").style.display = "block";
 	 
 	 
 	}
-	document.getElementById('plotbucket').style.display  = "block"; 
  	document.getElementById('chartContainer').style.display  = "block"; 
 	var chart = new CanvasJS.Chart("chartContainer",
     {
@@ -834,14 +822,14 @@ document.getElementById("exportChart").style.display = "block";
       },
 	  
 	  axisX:{
-        interlacedColor: "#DFDEDE",
+        interlacedColor: "#B2F9FA",
         title: "Time(Sec)"
       },
     axisY: [
 	      {/////output Y axis
             title: "Amplitude(v)",
 			
-			//maximum:6,
+			maximum:2,
         },
 		{/////input y axis invisible
 			gridThickness: 0,
@@ -855,13 +843,13 @@ document.getElementById("exportChart").style.display = "block";
 	data: [
       {        
         type: "spline",
-		color:"black",
+		color:"109DB6",
         dataPoints:dataOPPoints
 	
        },
        {        
         type: "spline",
-		color:"red",
+		color:"#F9CC1D",
         dataPoints:dataPoints
 	
        },
@@ -869,16 +857,13 @@ document.getElementById("exportChart").style.display = "block";
 	});
 
 	chart.render();
-	document.getElementById("result").style.display = "block";
 document.getElementById("exportChart").style.display = "block";
 	document.getElementById("exportChart").addEventListener("click",function(){
 	chart.exportChart({format: "jpg"})});	
 	}
 	
-	///testing square wave in volt
-	
-	
-	function PID_SQR_VOLT(){///////////for amplitude in VOLT//////////////
+	//////testing square wave in volt//////////////////////
+	function PID_SQR_VOLT(){
 		
 	var i = math.sqrt(-1);
 	var y = new Array();
@@ -886,20 +871,24 @@ document.getElementById("exportChart").style.display = "block";
 	var dataPoints=[];
 	var dataOPPoints=[];
 	
-	var totalT = document.getElementById('totaltime').value;
-	var sqrv  = document.getElementById('sqramp').value;
 	
 	
+	for( var t=0; t<=50;t+=0.1){	
 	
-	
-	for( var t=0; t<=totalT;t+=0.1){
-	
-	for( var t=0; t<= math.divide(totalT,4) ; t+=0.1){////20 sec is sample time
-	
-	var num1_pid = math.complex(-0.721536 , -0.356075 );
-	 var num2_pid = math.complex(-54.7083  , -45.4455  );
-	 var num3_pid = math.complex(0.608315,-0.793696);
-	 var num4_pid = math.complex(0,90.891);	 
+	var num1_pid = math.complex(0.219288 ,0.0204671 );
+	 var num2_pid = math.complex(0  , -3.142 );
+	 
+	 var num3_pid = math.complex(0.185056,0.982728);
+	 var num4_pid = math.complex(0,6.284);	
+
+    var num5_pid = math.complex(0.00462287,0.0103211);
+    var num6_pid = math.complex(-54.7083,-45.4455);
+    var num7_pid = math.complex(0,90.891);
+    var num8_pid = math.complex(-0.665809,-0.746122);
+
+	var mul_pid = math.complex(0,1.0);
+    //var num10_pid = 0.0501799*(math.pow(math.e,(-1.31345*t)));
+    	
 	
 	var epow1_pid = math.multiply(num2_pid,t);
 	var exp1_pid  = math.pow(math.e,epow1_pid);
@@ -907,94 +896,53 @@ document.getElementById("exportChart").style.display = "block";
 
     var epow2_pid = math.multiply(num4_pid,t);
     var exp2_pid  = math.pow(math.e,epow2_pid);
-	var scndcomp_pid = math.add(num3_pid,exp2_pid);
-	
+	var comp1 = math.multiply(mul_pid,exp2_pid);
+	var scndcomp_pid = math.subtract(num3_pid,comp1);	
 	var totalfrstprt_pid = math.multiply(frstcomp_pid , scndcomp_pid);
 	
-	var exp3_pid = math.pow(math.e,math.multiply(-1.31345 , t));
-	var totalscndprt_pid = math.multiply(0.443072,exp3_pid);	
+	var epow3_pid = math.multiply(num6_pid,t);
+	var exp3_pid  = math.pow(math.e,epow3_pid);
+	var thrdcomp_pid = math.multiply(num5_pid,exp3_pid);
+	var epow4_pid = math.multiply(num7_pid,t);
+	var exp4_pid  = math.pow(math.e,epow4_pid);
+	var frthcomp_pid = math.add(exp4_pid,num8_pid);
+	var totalscndprt_pid = math.multiply(thrdcomp_pid , frthcomp_pid);
+	
+	var epow5_pid = math.multiply(-1.31345,t);
+	var exp5_pid = math.pow(math.e,epow5_pid);
+	var totalthrdprt_pid = math.multiply(-0.0501799,exp5_pid);	
 	
 	
-	y[t]= sqrv;//assuming step size 1v.Input plot
-	yop[t]= math.multiply(sqrv,math.add(totalfrstprt_pid,totalscndprt_pid,1));//assuming step size 1v.Output plot
+	y[t]= 0.5 * Math.sign(Math.sin(2*Math.PI*0.5*t));//assuming sine amp of 1v p-p.Input plot
+	var op = math.multiply(1.571,(math.add(totalfrstprt_pid,totalscndprt_pid,totalthrdprt_pid)));//output sine
+	yop[t] = op.re * Math.sign(2*Math.PI*0.5*t);
 	
-	dataPoints.push({x:(t), y:(y[t]*1000)});///y[t] is in v
-	dataOPPoints.push({x:(t), y:(yop[t]*1000)});///yop[t] is in v	 
-	 
-	 //document.write (totalscndprt);
-	 }
-	 for( var t= math.divide(totalT,4); t<= math.divide(totalT,2); t++){////20 sec is sample time
 	
-	y[t]= 0;//assuming final value of 0v.Input plot
-	yop[t]=0;//assuming final value of 0v.Output plot
+	//document.write("<br/>"+yop[t]);
 	dataPoints.push({x:(t), y:(y[t])});///y[t] is in v
 	dataOPPoints.push({x:(t), y:(yop[t])});///yop[t] is in v	 
 	 
-	 //document.write (totalscndprt);
-	 }
-	 
-	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4) ; t+=0.1){////20 sec is sample time
-	
-	var num1_pid = math.complex(-0.721536 , -0.356075 );
-	 var num2_pid = math.complex(-54.7083  , -45.4455  );
-	 var num3_pid = math.complex(0.608315,-0.793696);
-	 var num4_pid = math.complex(0,90.891);	 
-	
-	var epow1_pid = math.multiply(num2_pid,t);
-	var exp1_pid  = math.pow(math.e,epow1_pid);
-	var frstcomp_pid = math.multiply(num1_pid,exp1_pid);
-
-    var epow2_pid = math.multiply(num4_pid,t);
-    var exp2_pid  = math.pow(math.e,epow2_pid);
-	var scndcomp_pid = math.add(num3_pid,exp2_pid);
-	
-	var totalfrstprt_pid = math.multiply(frstcomp_pid , scndcomp_pid);
-	
-	var exp3_pid = math.pow(math.e,math.multiply(-1.31345 , t));
-	var totalscndprt_pid = math.multiply(0.443072,exp3_pid);	
-	
-	
-	y[t]= sqrv;//assuming step size 1v.Input plot
-	yop[t]= math.multiply(sqrv,math.add(totalfrstprt_pid,totalscndprt_pid,1));//assuming step size 1v.Output plot
-	
-	dataPoints.push({x:(t), y:(y[t]*1000)});///y[t] is in v
-	dataOPPoints.push({x:(t), y:(yop[t]*1000)});///yop[t] is in v	 
-	 
-	 //document.write (totalscndprt);
-	 } 
-	 
-	for( var t= math.divide(math.multiply(3,totalT),4); t<= totalT; t++){////20 sec is sample time
-	
-	y[t]= 0;//assuming final value of 0v.Input plot
-	yop[t]=0;//assuming final value of 0v.Output plot
-	dataPoints.push({x:(t), y:(y[t])});///y[t] is in v
-	dataOPPoints.push({x:(t), y:(yop[t])});///yop[t] is in v	 
-	 
-	 //document.write (totalscndprt);
-	 } 
-	
 	 
 	}
-document.getElementById('plotbucket').style.display  = "block"; 	
-document.getElementById('chartContainer').style.display  = "block"; 	
+ 	document.getElementById('chartContainer').style.display  = "block"; 
 	var chart = new CanvasJS.Chart("chartContainer",
     {
       animationEnabled: true,
 		  animationDuration: 10000, 
 	  title:{
-      text: "Square wave Response of MAGLEV Plant with PID Controller "
+      text: "Sinusoidal Response of MAGLEV Plant with PID Controller "
 	  
       },
 	  
 	  axisX:{
-        interlacedColor: "#DFDEDE",
+        interlacedColor: "#E0FDE4",
         title: "Time(Sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude(mv)",
+            title: "Amplitude(v)",
 			
-			//maximum:6,
+			maximum:2,
         },
 		{/////input y axis invisible
 			gridThickness: 0,
@@ -1008,13 +956,13 @@ document.getElementById('chartContainer').style.display  = "block";
 	data: [
       {        
         type: "spline",
-		color:"black",
+		color:"red",
         dataPoints:dataOPPoints
 	
        },
        {        
         type: "spline",
-		color:"red",
+		color:"#F9CC1D",
         dataPoints:dataPoints
 	
        },
@@ -1022,160 +970,9 @@ document.getElementById('chartContainer').style.display  = "block";
 	});
 
 	chart.render();
-document.getElementById("result").style.display = "block";	
-	document.getElementById("exportChart").style.display = "block";
+document.getElementById("exportChart").style.display = "block";
 	document.getElementById("exportChart").addEventListener("click",function(){
 	chart.exportChart({format: "jpg"})});	
-		
-	}	
-	
-	///PID square wave in meter
-	
-	function PID_SQR(){///////////for amplitude in meter//////////////
-		
-	var i = math.sqrt(-1);
-	var y = new Array();
-    var yop = new Array();	
-	var dataPoints=[];
-	var dataOPPoints=[];
-	
-	var totalT = document.getElementById('totaltime').value;
-	var sqrv  = document.getElementById('sqramp').value;
-	
-	
-	
-	for( var t=0; t<=totalT; t+=0.1){
-	
-	for( var t=0; t<= math.divide(totalT,4);t+=0.1 ){////20 sec is sample time
-	
-	var num1_pid = math.complex(-0.721536 , -0.356075 );
-	 var num2_pid = math.complex(-54.7083  , -45.4455  );
-	 var num3_pid = math.complex(0.608315,-0.793696);
-	 var num4_pid = math.complex(0,90.891);	 
-	
-	var epow1_pid = math.multiply(num2_pid,t);
-	var exp1_pid  = math.pow(math.e,epow1_pid);
-	var frstcomp_pid = math.multiply(num1_pid,exp1_pid);
-
-    var epow2_pid = math.multiply(num4_pid,t);
-    var exp2_pid  = math.pow(math.e,epow2_pid);
-	var scndcomp_pid = math.add(num3_pid,exp2_pid);
-	
-	var totalfrstprt_pid = math.multiply(frstcomp_pid , scndcomp_pid);
-	
-	var exp3_pid = math.pow(math.e,math.multiply(-1.31345 , t));
-	var totalscndprt_pid = math.multiply(0.443072,exp3_pid);	
-	
-	
-	y[t]= sqrv;//assuming step size 1v.Input plot
-	yop[t]= math.multiply(sqrv,math.add(totalfrstprt_pid,totalscndprt_pid,1));//assuming step size 1v.Output plot
-	
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
-	 //document.write (totalscndprt);
-	 }
-	 for( var t= math.divide(totalT,4); t<= math.divide(totalT,2);t++){////20 sec is sample time
-	
-	y[t]= 0;//assuming final value of 0v.Input plot
-	yop[t]=0;//assuming final value of 0v.Output plot
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
-	 //document.write (totalscndprt);
-	 }
-	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4);t+=0.1 ){////25 sec is sample time
-	
-	var num1_pid = math.complex(-0.721536 , -0.356075 );
-	 var num2_pid = math.complex(-54.7083  , -45.4455  );
-	 var num3_pid = math.complex(0.608315,-0.793696);
-	 var num4_pid = math.complex(0,90.891);	 
-	
-	var epow1_pid = math.multiply(num2_pid,t);
-	var exp1_pid  = math.pow(math.e,epow1_pid);
-	var frstcomp_pid = math.multiply(num1_pid,exp1_pid);
-
-    var epow2_pid = math.multiply(num4_pid,t);
-    var exp2_pid  = math.pow(math.e,epow2_pid);
-	var scndcomp_pid = math.add(num3_pid,exp2_pid);
-	
-	var totalfrstprt_pid = math.multiply(frstcomp_pid , scndcomp_pid);
-	
-	var exp3_pid = math.pow(math.e,math.multiply(-1.31345 , t));
-	var totalscndprt_pid = math.multiply(0.443072,exp3_pid);	
-	
-	
-	y[t]= sqrv;//assuming step size 1v.Input plot
-	yop[t]= math.multiply(sqrv,math.add(totalfrstprt_pid,totalscndprt_pid,1));//assuming step size 1v.Output plot
-	
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
-	 //document.write (totalscndprt);
-	 } 
-	for( var t= math.divide(math.multiply(3,totalT),4); t<= totalT;t++){////25 sec is sample time
-	
-	y[t]= 0;//assuming final value of 0v.Input plot
-	yop[t]=0;//assuming final value of 0v.Output plot
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
-	 //document.write (totalscndprt);
-	 } 
-	
-	}
-	document.getElementById('plotbucket').style.display  = "block"; 
-    document.getElementById('chartContainer').style.display  = "block"; 	
-	var chart = new CanvasJS.Chart("chartContainer",
-    {
-      animationEnabled: true,
-		  animationDuration: 10000, 
-	  title:{
-      text: "Square wave Response of MAGLEV Plant with PID Controller "
-	  
-      },
-	  
-	  axisX:{
-        interlacedColor: "#DFDEDE",
-        title: "Time(Sec)"
-      },
-    axisY: [
-	      {/////output Y axis
-            title: "Amplitude(m)",
-			
-			//maximum:0.03,
-        },
-		{/////input y axis invisible
-			gridThickness: 0,
-    tickLength: 0,
-    lineThickness: 0,
-    labelFormatter: function(){
-      return " ";}
-	  
-		}
-		],
-	data: [
-      {        
-        type: "spline",
-		color:"black",
-        dataPoints:dataOPPoints
-	
-       },
-       {        
-        type: "spline",
-		color:"red",
-        dataPoints:dataPoints
-	
-       },
-      ]	
-	});
-
-	chart.render();	
-	document.getElementById("result").style.display = "block";
-	document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});	
-		
 	}
 	
 	
@@ -1189,44 +986,6 @@ document.getElementById("result").style.display = "block";
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	///Refresh
-	function Refresh(){
-		
-	document.getElementById('plotbucket').style.display = "none";
-	document.getElementById('run_btn').style.display = "none";
-	document.getElementById('m_scope').style.display = "none";
-	document.getElementById('v_scope').style.display = "none";
-	}
 	
 	
 	

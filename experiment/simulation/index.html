@@ -1,155 +1,320 @@
-<!-----Document Name: MAGLEV .html
-       Author Name  : Piyali Chattopadhyay
-	                  RE VLABS, IIT KGP-------------->
+<!-- This HTML page and script files are developed by
+    Piyali Chattopadhyay
+    Project Scientist-Technical,
+    Virtual Labs IIT Kharagpur.-->
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Magnetic Levitation Control System</title>
+<!DOCTYPE html>
+<html lang="en"><!--html tag start-->
+<head>
+    <title>Study and operation of Magnetic Levitation</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/adik.css" rel="stylesheet">
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script  src="./js/MAGLEV.js">   </script>
+  
+  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script>-->
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js"></script>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js  "></script>
  
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	<!--<script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js"></script>
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js.map"></script>-->
-	<script src=" https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.min.js  "></script>
+ 
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+
+<link rel="stylesheet" href="./css/MAGLEV.css">
+
 	
-        <!--<link rel="stylesheet" href="demo.css">-->
-		<link rel="stylesheet" href="css/MAGLEV.css">
+
+
+  <style>
+	.bluedot{
+	position:absolute;
+    border: 2px solid blue;
+    border-radius:50%;
+    background-color:blue;
+    background-image:linear-gradient(90deg,#0066ff,#00ccff);
+	box-shadow: 5px 5px 8px #888888;
+	}
+	.handlep{
+	position:absolute;
+    border: 2px solid blue;
+    border-radius:50%;
+    background-color:white;
+    background-image:url(./images/plus.png);
+	background-size:cover;
+	background-position:center;
+	
+	}
+	
+	.handlen{
+	position:absolute;
+    border: 2px solid blue;
+    border-radius:50%;
+    background-color:white;
+    background-image:url(./images/minus.jpg);
+	background-size:cover;
+	background-position:center;
+	
+	}
+	
+	canvas {	
+	max-width:100%;
+	}
+	
+  </style>
+  
+  
+  
+</head>
+<body><!--body tag start-->
+    <div class="container p-3 my-3 text-primary text-center border"><!--First Container under body tag start-->
+        <div class="row"><!--First row under 1st container start-->
+            <div class="col-md-3"><!--First col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/vlabs.png" alt="VLabs logo">
+            </div><!--First col under 1st row end-->
+            <div class="col-md-6"><!--2nd col under 1st row start-->
+                <p class="display-1"> <b> Virtual Labs <br> IIT Kharagpur </b> </p>
+            </div><!--2nd col under 1st row end-->
+            <div class="col-md-3"><!--3rd col under 1st row start-->
+                <img class="img-fluid rounded" src="./images/iitkgp.png" alt="IIT KGP Logo" >
+            </div><!--3rd col under 1st row end-->
+        </div><!--First row under 1st container end-->
+    
+        <hr>
+        <div class="row"><!--2nd row under 1st container start-->
+            <div class="col-md-3"><!--First col under 2nd row start-->
+
+            </div><!--First col under 2nd row end-->
+            <div class="col-md-6"><!--2nd col under 2nd row start-->
+                <p class="h1"> <b>Simulation </b> </p>
+            </div><!--2nd col under 2nd row end-->
+            <div class="col-md-3"><!--3rd col under 2nd row start-->
+
+            </div><!--3rd col under 2nd row end-->
+        </div><!--2nd row under 1st container end-->
+        <hr>
         
-		<!--<script src="../recti-simu/demo/animation/demo.js"></script>
-<script src="jsPlumb.js"></script>
-     <script src="jsPlumb.min.js"></script> -->  
+    </div><!--First Container under body tag end-->
+    
+    
+    </div><!--2nd Container under body tag end-->
 	
-	
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
-	 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-	
-	
-	
-	
-  </head>
-   <body class="d-flex flex-column min-vh-100" >
-  <div class="content-wrapper">
-  <!-----------------------Main Circuit Connection----------------------------------------->
-   <div class="container-fluid">
-<div class="row" >
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-<img id="headerlogo"  style="height:52%;width:100%;"src="images/logo.jpg "/>
-<h3 class="text-center"><b>Magnetic Levitation control system</b></h3><!-----------------------Header----------------------------------------->
-  </div></div>
-<!-----------------------Instructions----------------------------------------->  
+    <div class="container p-3 my-5 text-left border"><!--3rd Container under body tag start-->
+      <div class="row"><!--First row under 3rd container start-->
+        <div class="col-md-1"></div><!--First col under 3rd container start& end-->
+        <div class="col-md-10"><!--2nd col under 3rd container start-->
+            <p class="text-center bg-success"> <a class="nav-link" data-bs-toggle="tab"  id="instcontrol" style="background-color:#128BD9"  ><span class=" h3 text-dark"> Instructions </span></a>
+              <ol id="inst" style="display:block;height:200px;overflow-y:auto;">
+                      <li>The control panel consists of three input signals step, sinusoidal and square. After clicking on any input, input parameter box will appear.
+						  The parameter values can be changed except the square wave input. In square wave input parameter box, the frequency is kept fixed at 0.04 Hz
+						  to show exact two cycles of it. Click on 'Ok' button. Set the desired time for the experiment by changing the value of the corresponding input box.
+						  (just beside the 'Connect to Target' button).</li><br/>
+							
+						  <li>Click on 'Incremental Build' in the control panel . Wait till the MAGLEV model is successfully built and an alert message comes.</li><br/>
+						  
+						  <li>Click on 'Connect to Target' in the control panel (The icon after triangular button(Run)). Wait for the triangular button(Run) to become black ,then click on it.</li><br/>  
+						  
+						  <li>Drag the red ball to exactly between the IR sensors (green boxes) and put there. Click on the 'signal scope' or 'signal scope 1' icon to observe individual response in meter and volt respectively.
+						  The response for corresponding input will be shown during levitation of the ball, the red curve shows the input signal and the black curve shows the output signal. After the given time the ball will fall down.</li><br/> 
+						  
+						  <li>Click on 'Ok' button above the plot to restart the experiment with different input signal following the steps (1-4).</li><br/>
 
-<div class="row" >
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" >
-  <!-----Dropdown Hover--------------------->
-	<div class="dropdown" >
-  <p style="color:#B3061D"><b>INSTRUCTIONS</b></p>
-  <div class="dropdown-content" style="color:#025167;overflow:auto; height:500px;width:500px;">
-  <ol type="1">
-  <li> Click on 'Maglev Real-Time Models' tab in the left section box. One dialogbox will be opened. </li><br/>
-  
-  <li> Click on 'maglev_PID'.Total control structure is given there. </li><br/>
-  
-  <li>Three inputs are there ,Step,Sinusoidal and Square.Click on individual inputs to observe individual response.  </li><br/>
-  
-  <li>Click on 'Incremental Build' in the box (the second icon after External is written).Wait till one alert message comes.</li><br/>
-  
-  <li>Click on 'Connect to Target' in the box (The icon after trianguler button).Wait for the trianguler button(Run) to become black ,then click on it.</li><br/>  
-  
-  <li>Drag the red ball to exactly between the IR sensors and put there.Click on the signal scope or signal scope 1 icon to observe individual response in meter and volt respectively
-  The response for corresponding input will be shown during levitation of the ball,the yellow curve depicts input signal where as the blue curve depicts the output signal.After a certain time it will fall down.</li><br/> 
-  
-  <li>Click on the backward arrow sign above the left hand side dialogbox to restart the experiment with different input signal.</li><br/>
+					
+						 
+		   </ol>
+            </p> 
+          </div><!--2nd col under 3rd container end-->
+		  
+        <div class="col-md-1"></div><!--3rd col under 3rd container start& end-->
+      </div><!--First row under 3rd container end-->
+    </div><!--3rd Container under body tag end-->
+	
+    <div class="container p-3 my-5 text-center border" id="canvas" ><!--Fourth container under body tag start-->
+	
+	<!--<div class="row my-5 gy-2">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+	
+	
+			<div   class="img-container">
+			
+			<button type="button" onclick="config1control()"  class="btn btn-primary valve" >Configuration-1</button>
+			<button type="button" onclick="config2control()"  class="btn btn-primary valve" >Configuration-2</button><br/>
+			Tank-1<br/>
+			Enter the desired % Overshoot :<input type="number" id="ov" value="11" style="position:absolute;width:20%" readonly="readonly"><br/></br>
+			Enter the desired 2% settling time:&nbsp;<input type="number" id="ts" value="10" style="position:absolute;width:20%"readonly="readonly"><br/><br/>
+			Tank-2<br/>
+			Enter the desired % Overshoot :<input type="number" id="ov2" value="10" style="position:absolute;width:20%"readonly="readonly"><br/></br>
+			Enter the desired 2% settling time:&nbsp;<input type="number" id="ts2" value="20" style="position:absolute;width:20%"readonly="readonly"><br/><br/>
+			
+			</div>
+		
+	
+	
+	
+	</div>
+	<div class="col-md-1"></div>
+	</div>-->
+	
+		<div class="row my-5 gy-2"><!--- 1st row under fourth container start--->
+		
+			
+        
+			<div class="col-md-12" ><!--1st col under 1st row start -->
+				  <!-- Code Start here--> 
+				<div class="img-container"><!--img container div start-->
+				
+				
+					<img class="img-fluid " id="simu1" src="images/dbox3_sin_input.png " />
+					
+					<img class="img-fluid " id="b1" src="images/InB.png " onclick="IB()" title="Incremental Build"/>					
+					<img class="img-fluid " id="c1" src="images/CnT.png " onclick="CT()" title="Connect to Target"/>
 
-
-  </ol>
-  </div></div></div>
-  </div><!----------------------End of first row------------------------------------------------->  
+					<img id="sin_btn" onclick="show_sinbox();show_sin()" src="./images/sin_btn.png " />
+					  <img id="sqr_btn" onclick="show_sqrbox();show_sqr()" src="./images/sqr_btn.png " />
+					  <img id="step_btn" onclick="show_stepbox();show_step()" src="./images/step_btn.png " />
+					  <img id="PID_btn" onclick="show_PID_block()" src="./images/PID_btn.png " /> 
+					
+					
+					<img id="run_btn" onclick="IR_ON()" src="./images/run.png " title="Run"/>
+					  <img id="m_scope" onclick="m_scope()" src="./images/scope.png " title="desired ball position in meter" />
+					  <img id="v_scope" onclick="v_scope()" src="./images/scope.png " title="desired ball position in volt" />
+					  <input type="number" value="50" min="1" max="50" step="1" id="totaltime" />
   
- 
-<div class="row justify-content-start  "><!-----------------------Main Circuit----------------------------------------->
-<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-<div id ="simu1_Card" class="card-body" style="height:600px;width:320px;">
-  <img id="back" onclick="back_img()" src="images/back.png" style="position:relative;top:60px;left:430px;width:20px;height:20px;"/>
-  <img id="simu1" src="./images/DialogBox_1.png" style="position:relative;top:60px;"/>
-  <img id="btn1" onclick="show_Dbox2()" src="images/Button_1.png " style="position:relative;top:-158px;left:240px"/>
-  <img id="btn2" onclick="show_Dbox3()" src="images/Button_2.png " style="display:none;position:relative;top:-118px;left:180px"/>  
-  <img id="sin_btn" onclick="show_sinbox()" src="images/sin_btn.png " style="display:none;position:relative;top:-135px;left:20px"/>
-  <img id="sqr_btn" onclick="show_sqrbox()" src="images/sqr_btn.png " style="visibility:hidden;position:relative;top:-108px;left:20px;"/>
-  <img id="step_btn" onclick="show_stepbox()" src="images/step_btn.png " style="display:none;position:relative;top:-250px;left:20px"/>
-  <img id="PID_btn" onclick="show_PID_block()" src="images/PID_btn.png " style="display:none;position:relative;top:-390px;left:315px"/> 
+					  
+					  
+					<div id="step_block" >
+					  <p>Step Input Parameters</p>
+					  <input type="number" id="stepsize" min="1" max="5" step="1" value="1" ><span id="ssp">Step size(v)</span>
+					  
+					  <input type="number" id="steptime" min="1" max="25" step="1" value="20" ><span id="stp">Step time(sec)</span>
+					  
+					  <button type="button" class="btn btn-success"  onclick="hide_step()" style="position:absolute;top:74%;left:71%">Ok</button>
+					  </div>
   
-  <img id="IB" onclick="IB()" src="images/InB.png " title="Incremental Build" style="display:none;position:relative;top:-530px;left:520px"/>
-  <img id="CT" onclick="CT()" src="images/CnT.png " title="Connect to Target" style="display:none;position:relative;top:-558px;left:340px"/>
-  <img id="run_btn" onclick="IR_ON()" src="images/run.png " title="Run" style="display:none;position:relative;top:-580px;left:320px; width:20px;height:20px;"/>
-  <img id="m_scope" onclick="m_scope()" src="images/scope.png " title="desired ball position in meter" style="display:none;position:relative;top:-380px;left:564px; width:40px;height:40px;"/>
-  <img id="v_scope" onclick="v_scope()" src="images/scope.png " title="desired ball position in volt" style="display:none;position:relative;top:-340px;left:364px; width:40px;height:40px;"/>
-  <input type="number" value="0" min="0" max="2" id="changeplot" style="visibility:hidden"/>
+					  <div id="sin_block" >
+					  <p>Sine Input Parameters</p>
+					  <input type="number" id="sinamp" min="1" max="5" step="1" value="1" ><span id="sap">Amplitude(v)</span>
+					  <input type="number" id="sinfreq" min="0.1" max="1" step="0.1" value="0.5"><span id="sfp">Frequency(Hz)</span>
+					  
+					  <button type="button" class="btn btn-success"  onclick="hide_sin()" style="position:absolute;top:74%;left:71%">Ok</button>
+					  </div>
   
+					   <div id="sqr_block" >
+					  <p>Square wave Input Parameters</p>
+					  <input type="number" id="sqramp" min="1" max="5" step="1" value="1" ><span id="sqap">Amplitude(v)</span>
+					  
+					  <input type="number" id="sqrfreq" min="0" max="1" step="0.01" value="0.04" readonly=readonly><span id="sqfp">Frequency(Hz)</span>
+					  
+					   <button type="button" class="btn btn-success"  onclick="hide_sqr()" style="position:absolute;top:74%;left:71%">Ok</button>
+					  </div>
   
-  <div id="PID_block" style="display:none ;position:relative;top:-150px;left:60px;border:3px solid blue;border-top-width:10px;border-radius:3px;width:300px;height:400 px;">
-  <p>Function Block Parameters:PID</p>
-  <input type="number" id="kp" min="1" max="9" step="0.01" value="2" style="position:relative;width:20px;width:200px;" readonly="readonly">&nbsp;kp<br/><br/>
-  <input type="number" id="ki" min="1" max="9" step="0.01" value="1.8" style="position:relative;width:20px;width:200px;" readonly="readonly">&nbsp;ki<br/><br/>
-  <input type="number" id="kd" min="1" max="9" step="0.01" value="0.03" style="position:relative;width:20px;width:200px;" readonly="readonly">&nbsp;kd<br/><br/>
-  
-  <input type="button" class="custombutton" value="ok" onclick="hide_PID()" style="width:50px">
-  </div>
-  
-</div> 
-  </div>
-  
-  <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
-  <div id ="pCard" class="card-body" style="position:relative;height:700px;width:500px;">
-  <img id="Plant" src="images/MAGLEV_Plant.png " style="position:relative;top:-60px;left:300px;height:680px;width:500px;"     />
-  <!--<div id="ballbox"  ondrop="drop_handler(event);ball_Anim();chk_complex_operation()" ondragover="dragover_handler(event)" style="position:absolute;top:450px;left:1500px;width:70px;height:70px;border: 1px solid black;border-radius:50%;z-index:1"></div><br/>-->
-  
-  <img id="Redball"   draggable="true"  src="images/SteelBall.png " style="position:absolute;top:250px;left:530px;height:60px;width:60px; z-index:1"    />
-  <!--<input type="text" id="chk_complex_numbers" readonly="readonly"style=" width:800px">
-  <input type="button" value="chk" id=" chk_i" onclick="chk_complex_operation()" style="position:relative;top:500px">////position:absolute;top:530px;left:1490px;position:relative;top:-460px;left:515px;-->
    
-  <!--<div id ="pCard" class="card-body" style="position:relative;height:530px;width:320px;">
-  <img id="Plant" src="images/MAGLEV_Plant.png " style="position:relative;top:-60px;left:300px;height:680px;width:500px;"     />
-  <!--<div id="ballbox"  ondrop="drop_handler(event);ball_Anim();chk_complex_operation()" ondragover="dragover_handler(event)" style="position:absolute;top:450px;left:1500px;width:70px;height:70px;border: 1px solid black;border-radius:50%;z-index:1"></div><br/>
-  
-  <img id="Redball"   draggable="true"  src="images/SteelBall.png " style="position:absolute;top:530px;left:1490px;height:60px;width:60px; z-index:1"    />--> 
-  
-</div> 
-  </div>
-  </div><!-----------------------End of second row----------------------------------------->
-  
-  
-  
-  <div class="row justify-content-start"><!-----------------------Main Circuit----------------------------------------->
-<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-  
-  <div id="chartContainer" style="display:block; position:relative; top:100px; left:100px; height: 300px; width: 100%; "></div>
-	<button id="exportChart" class="custombutton"  style="display:none;position:relative; top:-230px; left:650px;">Download Plot</button>
-  
-  </div></div> 
-  
-  
-   <div class="row justify-content-center">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-  <footer  id="simulator-footer">
-               <div style="position:relative;top:800px;margin-left:40%; margin-right:40% ">
-                    Copyright &copy; 2011 Indian Institute of Technology Kharagpur,<a href="license/index.html" target="_blank" style="margin:auto"> Licensing Terms </a>
-                </div>
-            </footer></div>
-</div>
+					  <div id="PID_block" >
+					  <p>Function Block Parameters:PID</p>
+					  <input type="number" id="kp" min="1" max="9" step="0.01" value="2"  readonly="readonly"><span id="kpp">k<sub>p</sub></span>
+					  <input type="number" id="ki" min="1" max="9" step="0.01" value="1.8"  readonly="readonly"><span id="kip">k<sub>i</sub></span>
+					  <input type="number" id="kd" min="1" max="9" step="0.01" value="0.03"  readonly="readonly"><span id="kdp">k<sub>d</sub></span>
+					  
+					  <button type="button" class="btn btn-primary"  onclick="hide_PID()" style="position:absolute;top:54%;left:71%">Ok</button>
+					  </div>  
+					
+				</div><!--img container div end--><br>
+				<input type="number" value="1" min="0" max="2" id="changeplot" style="visibility:hidden"/>	
+					<!--<button type="button" id="refresh" onclick="Refresh()" class="btn btn-primary" >Clear</button>-->
+			</div><!---end of 1st col under 1st row--->	
+			
+        </div><!--1st row under fourth container end-->
+
+ 
+        
+	<div class="row my-5 gy-2"><!--- 2nd row under fourth container start--->
+	
+		<div class="col-md-1 "></div><!--1st col under 2nd row start and end -->
+		
+			<div class="col-md-10 "><!--2nd col under 2nd row start -->	
+			
+				<div class="img-container"><!--img container div start--> 
+					       
+					<img class="img-fluid" id="plant"  src="./images/MAGLEV_Plant2.png " style="z-index:2"/>
+
+					<div id="red_div" ondrop="drop(event)" ondragover="allowDrop(event)">
+					<img id="Redball"   draggable="true" ondragstart="drag(event)"  src="images/SteelBall.png " />
+					</div>
+					<div id="ball_container" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+					
+						 </div>
+							   
+								
+				
+				</div>
+			
+				
+				
+			
+		
+		<div class="col-md-1 "></div><!--3rd col under 2nd row start and end -->		
+					
+		
+	</div><!--- 2nd row under fourth container end--->	
 
 
+	 <div class="row justify-content-center"><!-----------------------graph T vs. w----------------------------------------->
+		
+	 
+			<div class="col-md-12">
+				<div id = "plotbucket" class="content-center" style="display:none; position: relative; border:3px solid white;height:530px;width:823px ">
+				<div class="d-inline-flex p-2">
+				<button type="button" id="exportChart" class="btn btn-primary"  style="display:none">Download Plot</button>&nbsp;
+				<button type="button" id="result" class="btn btn-danger" onclick="Refresh()"  style="display:none">OK</button><br/><br/>
+				</div>
+					<div id="chartContainer"  style="display:none; position:absolute; height: 70%; width: 100%;z-index:1 "></div>
+					
+				</div>
+				
+			</div>
+			
+			
+		
+	</div>	
 
 	
 	
-  </body>
-<script  src="js/MAGLEV.js">   </script>
+          <!-- Code End here-->
+        </div><!--Fourth container under body tag end-->
+          
+      <!--</div>
+    </div>-->
+
+    <div class="container p-3 my-5 text-primary text-center border"><!--Last and fifth container under body tag start-->
+      <div class="row">
+        <footer>
+          <div class="row ce">
+            <div class="col-sm-12">
+              <p class="h5"><i> Copyright ©2022 <a href="http://vlabs.iitkgp.ac.in/vlt/">Virtual Labs IIT Kharagpur</a> </i><br><br>
+              <a href="../../license/index.html" target="_blank"> Licensing Terms </a>
+            </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+  </div><!--Last and fifth container under body tag end-->
   
-</html>
-  
-  
+   
+	
+	
+</body><!--body tag end-->
+</html><!--html tag end-->
