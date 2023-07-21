@@ -12,7 +12,7 @@
 								
 **Steps to perform the simulation**
 
-1. The control panel consists of three input signals step, sinusoidal and square. After clicking on any input, input parameter box will appear.The parameter values can be changed except the square wave input. In square wave input parameter box, the frequency is kept fixed at 0.04 Hz to show exact two cycles of it. Click on 'Ok' button. Set the desired time for the experiment by changing the value of the corresponding input box.
+1. The control panel consists of three input signals step, sinusoidal and square. After clicking on any input, input parameter box will appear.The parameter values can be changed except the square wave input. In square wave input parameter box, the frequency is kept fixed at 0.04 Hz for 50 sec to show exact two cycles of it. Click on 'Ok' button. Set the desired time for the experiment by changing the value of the corresponding input box.
 (just beside the 'Connect to Target' button).
 						  
 <div align = "center">						  
