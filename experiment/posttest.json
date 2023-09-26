@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Which sensor is used in magnetic levitation experiment?",
+      "question": "1. Which sensor is used in magnetic levitation experiment?",
       "answers": {
         "a": "Ultrasonic sensors",
         "b": "IR sensors",
@@ -13,7 +13,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "What is the disadvantage of proportional controller?",
+      "question": "2. What is the disadvantage of proportional controller?",
       "answers": {
         "a": "Provides a constant steady state error  ",
         "b": "Improves stability of the system",
@@ -24,7 +24,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which of the following controllers improves steady state error and also stability of the system?",
+      "question": "3. Which of the following controllers improves steady state error and also stability of the system?",
       "answers": {
         "a": "P controller ",
         "b": "PI controller ",
@@ -35,7 +35,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "A condition where integral control action drives the output of a controller into saturation is called",
+      "question": "4. A condition where integral control action drives the output of a controller into saturation is called",
       "answers": {
         "a": "Self-bias",
         "b": " Repeat  ",
@@ -46,7 +46,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The controller output when the error is zero is known as",
+      "question": "5. The controller output when the error is zero is known as",
       "answers": {
         "a": " Bias ",
         "b": "Error",
@@ -58,7 +58,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The magnetic force, responsible for magnetic levitation is__",
+      "question": "6. The magnetic force, responsible for magnetic levitation is__",
       "answers": {
         "a": "  Magnetic attraction force ",
         "b": " Magnetic repulsion force",
@@ -69,7 +69,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The MAGLEV is a_____ plant",
+      "question": "7. The MAGLEV is a_____ plant",
       "answers": {
         "a": "SISO ",
         "b": "SIMO",
@@ -80,7 +80,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "The ________ part of a PID controller is very sensitive to noise",
+      "question": "8. The ________ part of a PID controller is very sensitive to noise",
       "answers": {
         "a": "Derivative ",
         "b": "Integral",
@@ -91,7 +91,7 @@
       "difficulty": "beginner"
     }, 
     {
-      "question": "In a magnetic ball levitation system the ferromagnetic core coil acts as an actuator.",
+      "question": "9. In a magnetic ball levitation system the ferromagnetic core coil acts as an actuator.",
       "answers": {
         "a": " True ",
         "b": "False"
@@ -100,7 +100,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "In a magnetic levitation system , the propulsion force is to , ",
+      "question": "10. In a magnetic levitation system , the propulsion force is to , ",
       "answers": {
         "a": " Push moving part forward ",
         "b": " lift up the moving part",
