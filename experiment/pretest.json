@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Which of the following is a correct statement?",
+      "question": "1. Which of the following is a correct statement?",
       "answers": {
         "a": "PI Controllers improves steady state response",
         "b": "PD controllers improves transient response",
@@ -13,7 +13,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "What is the relation between gain (g) and proportional band (p) in control system",
+      "question": "2. What is the relation between gain (g) and proportional band (p) in control system",
       "answers": {
         "a": " g = 100/p",
         "b": "g = p",
@@ -24,7 +24,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which of the following is an example for actuators?",
+      "question": "3. Which of the following is an example for actuators?",
       "answers": {
         "a": "Microphone",
         "b": "Solenoid",
@@ -35,7 +35,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "What is magnetic levitation?",
+      "question": "4. What is magnetic levitation?",
       "answers": {
         "a": "The use of magnetic fields to cause a train to rise above the rails",
         "b": "The use of fields to stretch a train above the rails",
@@ -46,7 +46,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "An disadvantage of implementing MAGLEV systems is it can be",
+      "question": "5. An disadvantage of implementing MAGLEV systems is it can be",
       "answers": {
         "a": "Not safe",
         "b": "Not environmental friendly",
@@ -57,7 +57,7 @@
       "difficulty": "beginner"
     },
 	{
-      "question": "Increasing the proportional gain in PID block will __________ the rise time",
+      "question": "6. Increasing the proportional gain in PID block will __________ the rise time",
       "answers": {
         "a": "Increase",
         "b": "Not affect",
@@ -69,7 +69,7 @@
     },	
 	
 	{
-      "question": "Which one of the following constants is represented by K<sub>p</sub>?",
+      "question": "7. Which one of the following constants is represented by K<sub>p</sub>?",
       "answers": {
         "a": "Integral",
         "b": "Derivative",
@@ -81,7 +81,7 @@
     },
 	
 	{
-      "question": "Which one of the following controllers increases the order of the system by one? ",
+      "question": "8. Which one of the following controllers increases the order of the system by one? ",
       "answers": {
         "a": "P controller",
         "b": "PI controller",
@@ -94,7 +94,7 @@
 	
 	
 	{
-      "question": "The magnetic levitation is __________ ",
+      "question": "9. The magnetic levitation is __________ ",
       "answers": {
         "a": "A non contact technology",
         "b": "Not a non contact technology",
@@ -106,7 +106,7 @@
     },
 	
 	{
-      "question": "Magnetic levitation uses principle of electromagnetism",
+      "question": "10. Magnetic levitation uses principle of electromagnetism",
       "answers": {
         "a": "False",
         "b": "True"
