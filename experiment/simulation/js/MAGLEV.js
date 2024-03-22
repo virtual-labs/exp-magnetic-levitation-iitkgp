@@ -4,7 +4,7 @@
 					  
 		 		window.onload= function(){
 					
-					alert('Laptop or desktop view is preferable or rotate the screen for better view ');
+					alert('Desktop mode in chrome is preferable or rotate the screen for better view ');
 					
 				}	  
 
@@ -261,158 +261,7 @@ function drop(ev) {
   }
   
 }
-///////////////////////////PD+PID////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-		  
-/*function MAGLEV_STEP(){
-	var i = math.sqrt(-1);
-	document.getElementById('exportChart').style.display="block";
-	var y = new Array();	
-	var dataPoints=[];
-	
-	for (var t=0;t<=50;t+=0.1){
-	/////////////////////////////////////PD STEP RESPONSE UPTO 15 SEC//////////////////////	
-	for( var t=0; t<=15;t+=0.1){
-     
-	 var totalfrstprt_pd = 1.41907;
-	var num2_pd = math.complex(0.709535,0.347901);
-	var expcomp1_pd = math.complex(-55.365,-46.2246);
-	var expcomp1t_pd = math.multiply(expcomp1_pd,t);
-	var exp1_pd = math.pow(math.e,expcomp1t_pd);
-	var num3_pd = math.complex(0.612361,-0.790578);
-	var expcomp2_pd = math.complex(0,92.4493);
-	var expcomp2t_pd = math.multiply(expcomp2_pd,t);
-	var exp2_pd = math.pow(math.e,expcomp2t_pd);
-	var scndprt3_pd = math.add(num3_pd,exp2_pd);
-	var totalscndprt_pd = math.multiply(num2_pd,exp1_pd,scndprt3_pd);
-	
-	y[t] = math.subtract(totalfrstprt_pd,totalscndprt_pd);//assuming step size 1v i.e 0.006m or approximately 0.01m.
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in paper the sensor gain or v-m relation is = 143.14v/m i.e 144.14v = 1m OR 1v = 1/144.14 m,now in m
-	
-    } 
-	 /////////////////////////////////////PID STEP RESPONSE AFTER 15 SEC TO 50 SEC//////////////////////
-	 for(  t=15; t<=50;t+=0.1){
-		 
-	 var num1_pid = math.complex(-0.721536 , -0.356075 );
-	 var num2_pid = math.complex(-54.7083  , -45.4455  );
-	 var num3_pid = math.complex(0.608315,-0.793696);
-	 var num4_pid = math.complex(0,90.891);	 
-	
-	var epow1_pid = math.multiply(num2_pid,t);
-	var exp1_pid  = math.pow(math.e,epow1_pid);
-	var frstcomp_pid = math.multiply(num1_pid,exp1_pid);
-
-    var epow2_pid = math.multiply(num4_pid,t);
-    var exp2_pid  = math.pow(math.e,epow2_pid);
-	var scndcomp_pid = math.add(num3_pid,exp2_pid);
-	
-	var totalfrstprt_pid = math.multiply(frstcomp_pid , scndcomp_pid);
-	
-	var exp3_pid = math.pow(math.e,(-1.31345 * t));
-	var totalscndprt_pid = math.multiply(0.443072,exp3_pid);
-	
-	y[t]= (totalfrstprt_pid+totalscndprt_pid+1);//assuming step size 1v.
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-		 
-	 
-	 //document.write (totalscndprt);
-	 }
-	}
-	 var chart = new CanvasJS.Chart("chartContainer",
-    {
-      animationEnabled: true,
-		  animationDuration: 10000, 
-	  title:{
-      text: "Step Response of MAGLEV Plant"
-	  
-      },
-	  
-	  axisX:{
-        interlacedColor: "#E0FDE4",
-        title: "Time(Sec)"
-      },
-	  axisY: {
-            title: "Amplitude(m)",
-			
-			maximum:0.08,
-        },
-      data: [
-      {        
-        type: "spline",
-		color:"#49C258",
-        dataPoints:dataPoints
-	
-	//document.getElementById('chk_complex_numbers').value = c;
-}
-      ]
-    });
-
-    chart.render();
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});
-  	
-}
-//////////////////////Maglev PD control for step input//////////
-
-/*function PD_Step_Plot(){
-	
-	var i = math.sqrt(-1);
-	var y = new Array();	
-	var dataPoints=[];
-	
-	for( var t=0; t<=50;t+=0.1){
-	var totalfrstprt = 1.41907;
-	var num2 = math.complex(0.709535,0.347901);
-	var expcomp1 = math.complex(-55.365,-46.2246);
-	var expcomp1t = math.multiply(expcomp1,t);
-	var exp1 = math.pow(math.e,expcomp1t);
-	var num3 = math.complex(0.612361,-0.790578);
-	var expcomp2 = math.complex(0,92.4493);
-	var expcomp2t = math.multiply(expcomp2,t);
-	var exp2 = math.pow(math.e,expcomp2t);
-	var scndprt3 = math.add(num3,exp2);
-	var totalscndprt = math.multiply(num2,exp1,scndprt3);
-	y[t] = 1*(math.subtract(totalfrstprt,totalscndprt));//assuming step size 1v.
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m
-		 
-	 
-	 //document.write (totalscndprt);
-	 }
-	 var chart = new CanvasJS.Chart("chartContainer",
-    {
-      animationEnabled: true,
-		  animationDuration: 10000, 
-	  title:{
-      text: "Step Response of MAGLEV Plant with "
-	  
-      },
-	  
-	  axisX:{
-        interlacedColor: "#E0FDE4",
-        title: "Time(Sec)"
-      },
-	  axisY: {
-            title: "Amplitude(m)",
-			
-			//maximum:0.0018,
-        },
-      data: [
-      {        
-        type: "spline",
-		color:"#49C258",
-        dataPoints:dataPoints
-	
-	//document.getElementById('chk_complex_numbers').value = c;
-}
-      ]
-    });
-
-    chart.render();
-}
-*/	
-	
 
 	
 	function PID_STEP(){///////////for amplitude in meter//////////////
@@ -888,13 +737,18 @@ document.getElementById("exportChart").style.display = "block";
 	
 	var totalT = document.getElementById('totaltime').value;
 	var sqrv  = document.getElementById('sqramp').value;
+	var sqrf  = document.getElementById('sqrfreq').value;///new addition
 	
+	var tperiod = math.divide(1,sqrf);
+	var cycles = math.divide(totalT,tperiod);
+	var cyclehlfs = math.multiply(cycles,2);
 	
+	//for( var t=0; t<=totalT;t+=0.1){
 	
+	//for( var t=0; t<= math.divide(totalT,4) ; t+=0.1){////20 sec is sample time
 	
-	for( var t=0; t<=totalT;t+=0.1){
-	
-	for( var t=0; t<= math.divide(totalT,4) ; t+=0.1){////20 sec is sample time
+	for (var nc = 0; nc < math.divide(cyclehlfs,2); nc+=1) {
+    for (var t = math.multiply(nc,tperiod); t <= math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t++) {
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -923,7 +777,8 @@ document.getElementById("exportChart").style.display = "block";
 	 
 	 //document.write (totalscndprt);
 	 }
-	 for( var t= math.divide(totalT,4); t<= math.divide(totalT,2); t++){////20 sec is sample time
+	 //for( var t= math.divide(totalT,4); t<= math.divide(totalT,2); t++){////20 sec is sample time
+	 for (var t = math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t<= math.multiply(2,math.divide(totalT,cyclehlfs),math.add(((2*nc)/2),1)); t++) {
 	
 	y[t]= 0;//assuming final value of 0v.Input plot
 	yop[t]=0;//assuming final value of 0v.Output plot
@@ -932,8 +787,9 @@ document.getElementById("exportChart").style.display = "block";
 	 
 	 //document.write (totalscndprt);
 	 }
+	 }
 	 
-	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4) ; t+=0.1){////20 sec is sample time
+	/* for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4) ; t+=0.1){////20 sec is sample time
 	
 	var num1_pid = math.complex(-0.721536 , -0.356075 );
 	 var num2_pid = math.complex(-54.7083  , -45.4455  );
@@ -972,9 +828,9 @@ document.getElementById("exportChart").style.display = "block";
 	 
 	 //document.write (totalscndprt);
 	 } 
-	
+	 */
 	 
-	}
+	//}
 document.getElementById('plotbucket').style.display  = "block"; 	
 document.getElementById('chartContainer').style.display  = "block"; 	
 	var chart = new CanvasJS.Chart("chartContainer",
@@ -1181,14 +1037,15 @@ document.getElementById("result").style.display = "block";
 	
 	function csqrf(){
 
-		if ( document.getElementById('changeplot').value == 2){
-		
-		var Ttime = document.getElementById('totaltime').value;
-		document.getElementById('sqrfreq').value = math.divide(1,math.divide(Ttime,2));
-		
-		}
-		
-		}
+if ( document.getElementById('changeplot').value == 2){
+
+var Ttime = document.getElementById('totaltime').value;
+document.getElementById('sqrfreq').value = math.divide(1,math.divide(Ttime,2));
+
+}
+
+}
+
 	
 	
 	

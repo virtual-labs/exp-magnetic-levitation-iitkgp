@@ -4,8 +4,8 @@
     {
       "question": "1. Which of the following is a correct statement?",
       "answers": {
-        "a": "PI Controllers improves steady state response",
-        "b": "PD controllers improves transient response",
+        "a": "PI Controllers improve steady state response",
+        "b": "PD controllers improve transient response",
         "c": "All of the above",
         "d": "None of the above"
       },
@@ -18,18 +18,18 @@
         "a": " g = 100/p",
         "b": "g = p",
         "c": "g = p/100",
-        "d": "None of these"
+        "d": "None of the above"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "3. Which of the following is an example for actuators?",
+      "question": "3. Which of the following is an example of actuator?",
       "answers": {
         "a": "Microphone",
         "b": "Solenoid",
         "c": "Micro switch",
-        "d": "None of These"
+        "d": "None of the above"
       },
       "correctAnswer": "b",
       "difficulty": "beginner"
@@ -46,7 +46,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "5. An disadvantage of implementing MAGLEV systems is it can be",
+      "question": "5. A disadvantage of implementing MAGLEV systems is, it can be",
       "answers": {
         "a": "Not safe",
         "b": "Not environmental friendly",
@@ -69,12 +69,12 @@
     },	
 	
 	{
-      "question": "7. Which one of the following constants is represented by K<sub>p</sub>?",
+      "question": "7. A proportional band setting of 175% is equivalent to a gain setting of __",
       "answers": {
-        "a": "Integral",
-        "b": "Derivative",
-        "c": "Proportional",
-        "d": "None of the above"
+        "a": "175",
+        "b": "0.756",
+        "c": "0.571",
+        "d": "1.32"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
@@ -98,7 +98,7 @@
       "answers": {
         "a": "A non contact technology",
         "b": "Not a non contact technology",
-        "c": "Both a,b",
+        "c": "Both of the above",
         "d": "None of the above"
       },
       "correctAnswer": "a",
@@ -106,12 +106,15 @@
     },
 	
 	{
-      "question": "10. Magnetic levitation uses principle of electromagnetism",
+      "question": "10. Strength of an electromagnet can be increased by",
       "answers": {
-        "a": "False",
-        "b": "True"
+        "a": "Increasing the cross-sectional area",
+        "b": "Increasing the number of turns",
+		"c": "Increasing current supply",
+        "d": "All of the above"
+		
       },
-      "correctAnswer": "b",
+      "correctAnswer": "d",
       "difficulty": "beginner"
     }
 	
