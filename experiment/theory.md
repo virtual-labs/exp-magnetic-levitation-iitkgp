@@ -106,14 +106,14 @@ $$\frac{\Delta x}{\Delta u} = \frac{-k_1 k_i}{ s^2 - k_x }...(8)$$
 where &Delta;<span class="fontCss3">u</span> is the incremental control voltage from its equilibrium value. Finally, considering the (IR) sensor is
 linear with gain <span class="fontCss3">k</span><sub>2</sub>, the overall plant transfer function can be written as,
 
-$$P(s) = \frac{\Delta x_v}{\Delta u} = \frac{-k_1 k_2 k_i}{ s^2 - k_x }....(9)$$
+$$P(s) \triangleq \frac{\Delta x_v}{\Delta u} = \frac{-k_1 k_2 k_i}{ s^2 - k_x }....(9)$$
 
 where <span class="fontCss3">x<sub>v</sub></span> is the sensor output (in volt). Note from the expression of
 <span class="fontCss3">k<sub>i</sub></span> and
 <span class="fontCss3">k<sub>x</sub></span> that this linearized system is independent of levitation-ball mass.
 The parameters of the physical system considered are presented in list below. With these parameters, the plant transfer function becomes
 
-$$P(s) = \frac{b}{s^2 - p^2} = \frac{-3518.85}{s^2 - 2180}...(10)$$
+$$P(s) \triangleq \frac{b}{s^2 - p^2} = \frac{-3518.85}{s^2 - 2180}...(10)$$
 
 <b>The physical MAGLEV system parameters:</b>
 
@@ -190,5 +190,5 @@ Thus very often it is omitted in the controller design. Derivative part output f
 the controller down. Proper filtering can help to reduce the high frequency noise without degrading the control system performance in the lower frequency band.
 
 
-<link rel="stylesheet" type="text/css" href="./experiment/simulation/css/MAGLEV.css">						
+<link rel="stylesheet" type="text/css" href="./simulation/css/MAGLEV.css">						
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>								
