@@ -475,7 +475,19 @@ position: absolute;
 	60% {transform: translateY(-15px);}
 }
 
-
+.fontCss{
+font-family:'Sitka Text';
+font-style: italic;
+}
+.fontCss2{
+font-family:'Bodoni MT';
+font-size:20px;
+}
+.fontCss3{
+font-family:'Bodoni MT';
+font-style: italic;
+font-size:20px;
+}
 
 
 
