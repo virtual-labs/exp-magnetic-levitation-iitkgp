@@ -190,5 +190,5 @@ Thus very often it is omitted in the controller design. Derivative part output f
 the controller down. Proper filtering can help to reduce the high frequency noise without degrading the control system performance in the lower frequency band.
 
 
-						
+<link rel="stylesheet" type="text/css" href="./experiment/simulation/css/MAGLEV.css">						
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>								
