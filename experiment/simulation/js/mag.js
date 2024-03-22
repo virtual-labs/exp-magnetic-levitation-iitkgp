@@ -4,7 +4,7 @@
 					  
 		 		window.onload= function(){
 					
-					alert('Laptop or desktop view is preferable or rotate the screen for better view ');
+					alert('Desktop mode in chrome is preferable or rotate the screen for better view ');
 					
 				}	  
 
@@ -112,13 +112,13 @@
 	
 	function IB(){
 		setTimeout(function(){
-		alert('Successfull completion of build procedure for the model:Maglev_PID');	
+		alert('Successfull completion of build procedure for the model : Maglev_PID');	
 		},2000)
 		
 	}
 	function CT(){		
 		setTimeout(function() {
-			alert('Model Maglev_PID loaded');
+			alert('Model Maglev_PID is loaded');
          document.getElementById('run_btn').style.display  = "block";
          document.getElementById('m_scope').style.display  = "block";
 		 document.getElementById('v_scope').style.display  = "block";		 
@@ -494,11 +494,11 @@ function drop(ev) {
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude(m)",
+            title: "Amplitude (m)",
 			
 			//maximum:0.03,
         },
@@ -619,11 +619,11 @@ document.getElementById('chartContainer').style.display  = "block";
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude(mv)",
+            title: "Amplitude (mv)",
 			
 			//maximum:6,
         },
@@ -741,11 +741,11 @@ document.getElementById("result").style.display = "block";
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude(m)",
+            title: "Amplitude (m)",
 			
 			//maximum:0.03,
         },
@@ -861,11 +861,11 @@ document.getElementById("exportChart").style.display = "block";
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude(v)",
+            title: "Amplitude (v)",
 			
 			//maximum:6,
         },
@@ -918,6 +918,11 @@ document.getElementById("exportChart").style.display = "block";
 	
 	var totalT = document.getElementById('totaltime').value;
 	var sqrv  = document.getElementById('sqramp').value;
+	var sqrf  = document.getElementById('sqrfreq').value;///new addition
+	
+	var tperiod = math.divide(1,sqrf);
+	var cycles = math.divide(totalT,tperiod);
+	var cyclehlfs = math.multiply(cycles,2);
 	
 	///maglev parameters
 	var b = -3691;
@@ -948,10 +953,13 @@ document.getElementById("exportChart").style.display = "block";
 	
 	
 	
-	for( var t=0; t<=totalT;t+=0.1){
+	//for( var t=0; t<=totalT;t+=0.1){
 	
-	for( var t=0.1; t<= math.divide(totalT,4) ; t+=0.1){////20 sec is sample time
+	//for( var t=0.1; t<= math.divide(totalT,4) ; t+=0.1){////20 sec is sample time
 	
+	for (var nc = 0; nc < math.divide(cyclehlfs,2); nc+=1) {
+    for (var t = math.multiply(nc,tperiod); t <= math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t++) {
+		
 	var part1 = coeff1;
 	var part2 = math.multiply(coeff2,math.pow(math.e,math.multiply(pol1,t)));
 	var part3 = math.multiply(coeff3,math.pow(math.e,math.multiply(pol2,t)));
@@ -964,8 +972,10 @@ document.getElementById("exportChart").style.display = "block";
 	dataOPPoints.push({x:(t), y:(yop[t]*1000)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
 	 
 	 }
-	 for( var t= math.divide(totalT,4); t<= math.divide(totalT,2); t++){////20 sec is sample time
-	
+	 
+	 //for( var t= math.divide(totalT,4); t<= math.divide(totalT,2); t++){////20 sec is sample time
+	 for (var t = math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t<= math.multiply(2,math.divide(totalT,cyclehlfs),math.add(((2*nc)/2),1)); t++) {
+		
 	y[t]= 0;//assuming final value of 0v.Input plot
 	yop[t]=0;//assuming final value of 0v.Output plot
 	dataPoints.push({x:(t), y:(y[t])});///y[t] is in v
@@ -973,8 +983,9 @@ document.getElementById("exportChart").style.display = "block";
 	 
 	 //document.write (totalscndprt);
 	 }
-	 
-	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4) ; t+=0.1){////20 sec is sample time
+	 }
+	
+	/* for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4) ; t+=0.1){////20 sec is sample time
 	
 	var part1 = coeff1;
 	var part2 = math.multiply(coeff2,math.pow(math.e,math.multiply(pol1,t)));
@@ -1000,7 +1011,7 @@ document.getElementById("exportChart").style.display = "block";
 	 } 
 	
 	 
-	}
+	} */
 document.getElementById('plotbucket').style.display  = "block"; 	
 document.getElementById('chartContainer').style.display  = "block"; 	
 	var chart = new CanvasJS.Chart("chartContainer",
@@ -1014,11 +1025,11 @@ document.getElementById('chartContainer').style.display  = "block";
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude(mv)",
+            title: "Amplitude (mv)",
 			
 			//maximum:6,
         },
@@ -1071,6 +1082,11 @@ document.getElementById("result").style.display = "block";
 	
 	var totalT = document.getElementById('totaltime').value;
 	var sqrv  = document.getElementById('sqramp').value;
+	var sqrf  = document.getElementById('sqrfreq').value;///new addition
+	
+	var tperiod = math.divide(1,sqrf);
+	var cycles = math.divide(totalT,tperiod);
+	var cyclehlfs = math.multiply(cycles,2);
 	
 	///maglev parameters
 	var b = -3691;
@@ -1100,10 +1116,12 @@ document.getElementById("result").style.display = "block";
 	var coeff4 = math.divide(rhs_pol3,math.multiply(pol3,math.subtract(pol3,pol1),math.subtract(pol3,pol2)));
 	
 	
-	for( var t=0; t<=totalT; t+=0.1){
+	//for( var t=0; t<=totalT; t+=0.1){
 	
-	for( var t=0.1; t<= math.divide(totalT,4);t+=0.1 ){////20 sec is sample time
-	
+	//for( var t=0.1; t<= math.divide(totalT,4);t+=0.1 ){////20 sec is sample time
+	for (var nc = 0; nc < math.divide(cyclehlfs,2); nc+=1) {
+    for (var t = math.multiply(nc,tperiod); t <= math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t++) {
+		
 	var part1 = coeff1;
 	var part2 = math.multiply(coeff2,math.pow(math.e,math.multiply(pol1,t)));
 	var part3 = math.multiply(coeff3,math.pow(math.e,math.multiply(pol2,t)));
@@ -1117,8 +1135,10 @@ document.getElementById("result").style.display = "block";
 	 
 	 //document.write (totalscndprt);
 	 }
-	 for( var t= math.divide(totalT,4); t<= math.divide(totalT,2);t++){////20 sec is sample time
-	
+	 
+	 //for( var t= math.divide(totalT,4); t<= math.divide(totalT,2);t++){////20 sec is sample time
+	for (var t = math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t<= math.multiply(2,math.divide(totalT,cyclehlfs),math.add(((2*nc)/2),1)); t++) {
+		
 	y[t]= 0;//assuming final value of 0v.Input plot
 	yop[t]=0;//assuming final value of 0v.Output plot
 	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
@@ -1126,7 +1146,8 @@ document.getElementById("result").style.display = "block";
 	 
 	 //document.write (totalscndprt);
 	 }
-	for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4);t+=0.1 ){////25 sec is sample time
+	 }
+	/* for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4);t+=0.1 ){////25 sec is sample time
 	
 	var part1 = coeff1;
 	var part2 = math.multiply(coeff2,math.pow(math.e,math.multiply(pol1,t)));
@@ -1151,7 +1172,7 @@ document.getElementById("result").style.display = "block";
 	 //document.write (totalscndprt);
 	 } 
 	
-	}
+	} */
 	document.getElementById('plotbucket').style.display  = "block"; 
     document.getElementById('chartContainer').style.display  = "block"; 	
 	var chart = new CanvasJS.Chart("chartContainer",
@@ -1165,11 +1186,11 @@ document.getElementById("result").style.display = "block";
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time(Sec)"
+        title: "Time (sec)"
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude(m)",
+            title: "Amplitude (m)",
 			
 			//maximum:0.03,
         },
@@ -1222,49 +1243,14 @@ document.getElementById('sqrfreq').value = math.divide(1,math.divide(Ttime,2));
 
 }
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	///Refresh
 	function Refresh(){
 		
 	document.getElementById('plotbucket').style.display = "none";
+	document.getElementById('run_btn').src = "./images/run.png ";
 	document.getElementById('run_btn').style.display = "none";
 	document.getElementById('m_scope').style.display = "none";
 	document.getElementById('v_scope').style.display = "none";
