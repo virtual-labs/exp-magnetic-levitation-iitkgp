@@ -2,38 +2,121 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "1. Which of the following is a correct statement?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "PI Controllers improve steady state response",
+        "b": "PD controllers improve transient response",
+        "c": "All of the above",
+        "d": "None of the above"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "2. What is the relation between gain (g) and proportional band (p) in control system",
+      "answers": {
+        "a": " g = 100/p",
+        "b": "g = p",
+        "c": "g = p/100",
+        "d": "None of the above"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "3. Which of the following is an example of actuator?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Microphone",
+        "b": "Solenoid",
+        "c": "Micro switch",
+        "d": "None of the above"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "4. What is magnetic levitation?",
+      "answers": {
+        "a": "The use of magnetic fields to cause a train to rise above the rails",
+        "b": "The use of fields to stretch a train above the rails",
+        "c": "To use of fields to shrink a train above the rails",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "5. A disadvantage of implementing MAGLEV systems is, it can be",
+      "answers": {
+        "a": "Not safe",
+        "b": "Not environmental friendly",
+        "c": "Costly",
+        "d": "None of the above"
       },
       "correctAnswer": "c",
       "difficulty": "beginner"
+    },
+	{
+      "question": "6. Increasing the proportional gain in PID block will __________ the rise time",
+      "answers": {
+        "a": "Increase",
+        "b": "Not affect",
+        "c": "Decrease",
+        "d": "None of the above"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },	
+	
+	{
+      "question": "7. A proportional band setting of 175% is equivalent to a gain setting of __",
+      "answers": {
+        "a": "175",
+        "b": "0.756",
+        "c": "0.571",
+        "d": "1.32"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "8. Which one of the following controllers increases the order of the system by one? ",
+      "answers": {
+        "a": "P controller",
+        "b": "PI controller",
+        "c": "Both the above",
+        "d": "None of the above"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	
+	
+	{
+      "question": "9. The magnetic levitation is __________ ",
+      "answers": {
+        "a": "A non contact technology",
+        "b": "Not a non contact technology",
+        "c": "Both of the above",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "10. Strength of an electromagnet can be increased by",
+      "answers": {
+        "a": "Increasing the cross-sectional area",
+        "b": "Increasing the number of turns",
+		"c": "Increasing current supply",
+        "d": "All of the above"
+		
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
     }
+	
   ]
 }
