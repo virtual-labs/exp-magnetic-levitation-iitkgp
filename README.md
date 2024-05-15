@@ -7,17 +7,21 @@
 <b>Discipline | <b> Electrical Engineering 
 :--|:--|
 <b> Lab | <b> **Control and Instrumentation Lab**
-<b> Experiment|     <b> **Study and operation of Magnetic Levitation and Experiment 2**
+<b> Experiment|     <b> **Study and operation of Magnetic Levitation**
 
 
 ### About the Experiment 
 **System description**
 
-The magnetic levitation (MAGLEV) is a non-contact technology . It reduces the cost of maintenance as there is no friction and so the energy	efficiency is high. This technology is the future in transportation, non-contact actuators, precision engineering, non contact structures,satellite launching, etc. However, the open loop MAGLEV system is highly nonlinear and highly unstable and therefore, designing a simple and effective controller for such a system is very challenging.
+The magnetic levitation (MAGLEV) is a non-contact technology . It reduces the cost of maintenance as there is no friction and so the energy efficiency is high. This technology is the future in transportation, non-contact actuators, precision engineering, non contact structures, satellite launching, etc. However, The open loop magnetic levitation system is highly nonlinear and highly unstable, and therefore, designing a simple and effective controller for such a system is very challenging.
+
 					
 <div align="center">
-<img class="img-fluid"  src="./images/intro.png" alt="">
+<img class="img-fluid"  src="experiment/images/intro.png" alt="">
+
+ <b>Fig. 1. Schematic of the MAGLEV system</b>
 </div>
+
 
 <b>Subject matter expertise | <b> **Prof. Alok Kanti Deb**
 :--|:--|

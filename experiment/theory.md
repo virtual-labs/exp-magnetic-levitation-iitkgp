@@ -7,7 +7,7 @@ transportation, non-contact actuators, precision engineering, non-contact struct
 							
 <div align="center">
 <img alt="" src="./images/img_content1.png" class="img-fluid"></br>
-<b>Fig 1: MAGLEV mechanical unit</b>
+<b>Fig. 1. MAGLEV mechanical unit</b>
 </div>
 							
 Magnetic Levitation System (MLS) is an electromagnetic device which levitates ferromagnetic elements using principle of electromagnetism. MLS technology eliminates mechanical contacts between moving and stationary
@@ -42,11 +42,11 @@ The bound for the control signal is set to (-5V to +5V).<br/>
 <div align="center">
 <img alt="" src="./images/img_content2_2.png" class="img-fluid">
 	
-<b>Fig 2: MAGLEV model for position control</b>
+<b>Fig. 2. MAGLEV model for position control</b>
 </div>
 <br/>
 
-MAGLEV is a SISO plant – single input single output (fig 2).
+MAGLEV is a SISO plant – single input single output (Fig. 2).
 Ball Position is the model output and voltage is the control signal.
 
 As the system dynamics is nonlinear, for analysis and controller design purpose it is linearized around an equilibrium point 
@@ -68,6 +68,7 @@ $$g = f(i,x)...(5)$$
 For linearization purpose let,
 
 $$x = x_0 + \Delta x$$
+
 $$i = i_0 + \Delta i$$
 								
 where &Delta;<span class="fontCss3">x</span> is the small deviation from the equilibrium position 
@@ -94,6 +95,7 @@ $$\frac{\Delta x}{\Delta i} = \frac{-k_i}{ s^2 - k_x } ...(7)$$
 where,
 
 $$k_i = \frac{2g}{i_0}$$
+
 $$k_x = \frac{2g}{x_0}$$
 								
 Coil current <span class="fontCss3">i</span> proportional to the control voltage 
@@ -115,7 +117,9 @@ The parameters of the physical system considered are presented in list below. Wi
 
 $$P(s) \triangleq \frac{b}{s^2 - p^2} = \frac{-3518.85}{s^2 - 2180}...(10)$$
 
-<b>The physical MAGLEV system parameters:</b>
+The open-loop system is highly unstable, the poles are located at ±46.69.
+
+<b>The physical MAGLEV system parameters :</b>
 
 <span class="fontCss3">m</span> — Mass of the steel ball 0.02 kg
 
@@ -136,10 +140,10 @@ Sensor output voltage level (<span class="fontCss3">x<sub>v</sub></span>) +1.25 
 
 **Plant Control:**
 								
-A general schematic of a simple control closed loop system is presented in fig 3.<br/><br/>
+A general schematic of a simple control closed loop system is presented in Fig. 3.<br/><br/>
 <div align ="center">
 <img alt="" src="./images/img_content6.png" class="img-fluid"></br>
-<b>Fig 3: Simple control system - closed loop</b>
+<b>Fig. 3. Simple control system - closed loop</b>
 </div>
 <br/>
 								
@@ -176,7 +180,7 @@ $$C(s) = \frac{U(s)}{E(s)} = (k_p +\frac{k_i}{s} + k_d.s) = \frac{k_ds^2 + k_ps 
 								
 <div align="center">
 <img alt="" src="./images/PID.png" class="img-fluid"></br>
-<b>Fig 4: 1 DOF PID controller</b>
+<b>Fig. 4. 1 DOF PID controller</b>
 </div>
 
 Each of the PID controller blocks (<span class="fontCss3">k<sub>p</sub></span>, <span class="fontCss3">k<sub>i</sub>/s</span>  and 
