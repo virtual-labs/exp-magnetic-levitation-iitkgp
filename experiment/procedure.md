@@ -2,12 +2,12 @@
 
 <div align="center">
 <img class="img-fluid"  src="./images/intro.png" alt=""><br/>
-<b>Fig 1: Schematic of the MAGLEV system</b>
+<b>Fig. 1. Schematic of the MAGLEV system</b>
 </div>
 							
 <div align="center">
 <img class="img-fluid" src="./images/vplant.png" ><br/>
-<span><b>Fig 2: Experimental setup for magnetic levitation control simulation</b></span>
+<span><b>Fig. 2. Experimental setup for magnetic levitation control simulation</b></span>
 </div>							
 								
 **Steps to perform the simulation**
@@ -17,7 +17,7 @@ The parameter values can be changed. Click on 'Ok' button. Set the desired time 
 						  
 <div align = "center">						  
 <img class="img-fluid" src ="images/controller.png"><br/>
-<b>Fig 3: MAGLEV Controller</b>
+<b>Fig. 3. MAGLEV Controller</b>
 </div>
 							
 2. Click on 'Incremental Build' icon in the control panel . Wait till the MAGLEV model is successfully built and an alert message is shown.
