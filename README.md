@@ -18,6 +18,8 @@ The magnetic levitation (MAGLEV) is a non-contact technology . It reduces the co
 					
 <div align="center">
 <img class="img-fluid"  src="experiment/images/intro.png" alt="">
+
+ <b>Fig. 1. Schematic of the MAGLEV system</b>
 </div>
 
 
