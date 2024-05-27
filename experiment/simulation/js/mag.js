@@ -623,7 +623,7 @@ document.getElementById('chartContainer').style.display  = "block";
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude (mv)",
+            title: "Amplitude (mV)",
 			
 			//maximum:6,
         },
@@ -865,7 +865,7 @@ document.getElementById("exportChart").style.display = "block";
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude (v)",
+            title: "Amplitude (V)",
 			
 			//maximum:6,
         },
@@ -1029,7 +1029,7 @@ document.getElementById('chartContainer').style.display  = "block";
       },
     axisY: [
 	      {/////output Y axis
-            title: "Amplitude (mv)",
+            title: "Amplitude (mV)",
 			
 			//maximum:6,
         },
