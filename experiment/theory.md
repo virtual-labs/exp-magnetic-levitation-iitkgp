@@ -26,14 +26,14 @@ Magnetic levitation system modeling is based on model linearization using Taylor
 
 The simplest non linear model of MAGLEV relating the ball position <span class="fontCss3">x</span> and coil current <span class="fontCss3">i</span> is :
 
-$$m . \ddot{x} = m . g - k \frac{i^2}{x^2} ...(1)$$
+$$m . \ddot{x} = m . g - k \frac{i^2}{x^2} \tag 1$$
 								
 where <span class="fontCss3">k</span> is a constant depending on the coil (electromagnet) parameters, g is the acceleration due to gravity.
 To present the full phenomenological model a relation between the control voltage <span class="fontCss3">u</span> and 
 the coil current <span class="fontCss3">i</span> would have to be introduced analysing the whole MAGLEV circuitry. However MAGLEV is equipped with an inner control loop providing
 a current proportional to the control voltage that is generated for control purpose:
 
-$$i = k_1 . u ...(2)$$
+$$i = k_1 . u \tag 2$$
 
 Equations (1) and (2) constitute a nonlinear model.
 <span class="fontCss3">k<sub>1</sub></span> is control voltage to coil current gain.
@@ -54,15 +54,15 @@ As the system dynamics is nonlinear, for analysis and controller design purpose 
 $$\ddot{x} = 0$$
 								
 Hence,
-$$k = \frac{mgx_0^2}{i_0^2} ....(3)$$
+$$k = \frac{mgx_0^2}{i_0^2} \tag 3$$
 
 Equation (1) can be written as,
 
-$$\ddot{x_0} = g - f(i,x), \ f(i,x) = k \frac{i^2}{m.x^2}..(4)$$
+$$\ddot{x_0} = g - f(i,x), \ f(i,x) = k \frac{i^2}{m.x^2} \tag 4$$
 
 At equilibrium point,
 
-$$g = f(i,x)...(5)$$
+$$g = f(i,x) \tag 5$$
 
 
 For linearization purpose let,
@@ -82,7 +82,7 @@ A linearization is done at the equilibrium point of
 
 The linearization steps are the following:
 
-$$\ddot{x} = -(\frac{\delta f(i,x)}{\delta i} \vert_{i_0,x_0} \Delta i + \frac{\delta f(i,x)}{\delta x} |_{i_0,x_0} \Delta x ), ...(6)$$
+$$\ddot{x} = -(\frac{\delta f(i,x)}{\delta i} \vert_{i_0,x_0} \Delta i + \frac{\delta f(i,x)}{\delta x} |_{i_0,x_0} \Delta x ), \tag 6$$
 
 $$s^2\Delta x = -( k_i \Delta i -k_x \Delta x ),$$
 
@@ -90,7 +90,7 @@ $$s^2\Delta x - k_x \Delta x = - k_i \Delta i,$$
 
 $$\Delta x( s^2 - k_x ) = - k_i \Delta i,$$
 
-$$\frac{\Delta x}{\Delta i} = \frac{-k_i}{ s^2 - k_x } ...(7)$$
+$$\frac{\Delta x}{\Delta i} = \frac{-k_i}{ s^2 - k_x } \tag 7$$
 
 where,
 
@@ -103,19 +103,19 @@ Coil current <span class="fontCss3">i</span> proportional to the control voltage
 <span class="fontCss3">k</span><sub>1</sub> being the proportionality constant.
 The transfer function becomes,
 
-$$\frac{\Delta x}{\Delta u} = \frac{-k_1 k_i}{ s^2 - k_x }...(8)$$
+$$\frac{\Delta x}{\Delta u} = \frac{-k_1 k_i}{ s^2 - k_x } \tag 8$$
 
 where &Delta;<span class="fontCss3">u</span> is the incremental control voltage from its equilibrium value. Finally, considering the (IR) sensor is
 linear with gain <span class="fontCss3">k</span><sub>2</sub>, the overall plant transfer function can be written as,
 
-$$P(s) \triangleq \frac{\Delta x_v}{\Delta u} = \frac{-k_1 k_2 k_i}{ s^2 - k_x }....(9)$$
+$$P(s) \triangleq \frac{\Delta x_v}{\Delta u} = \frac{-k_1 k_2 k_i}{ s^2 - k_x } \tag 9$$
 
 where <span class="fontCss3">x<sub>v</sub></span> is the sensor output (in volt). Note from the expression of
 <span class="fontCss3">k<sub>i</sub></span> and
 <span class="fontCss3">k<sub>x</sub></span> that this linearized system is independent of levitation-ball mass.
 The parameters of the physical system considered are presented in list below. With these parameters, the plant transfer function becomes
 
-$$P(s) \triangleq \frac{b}{s^2 - p^2} = \frac{-3518.85}{s^2 - 2180}...(10)$$
+$$P(s) \triangleq \frac{b}{s^2 - p^2} = \frac{-3518.85}{s^2 - 2180} \tag {10} $$
 
 The open-loop system is highly unstable, the poles are located at ±46.69.
 
