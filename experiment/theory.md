@@ -1,6 +1,6 @@
 # Theory
 
- **MAGLEV:**
+ **MAGLEV**
 								 
 The magnetic levitation (MAGLEV) is a non-contact technology. It reduces the cost of maintenance as there is no friction, so the energy efficiency is high. This technology is the future in
 transportation, non-contact actuators, precision engineering, non-contact structures, satellite launching, etc.
@@ -17,7 +17,7 @@ The repulsive force is responsible for magnetic levitation. MLS has numerous app
 constant need of levitation, MLS is subjected to continuously changing parameters and hence the mathematical model is highly nonlinear. There have been several attempts to model and control the MLS . Though the magnetic levitation is having non linear behavior and it is described by non linear differential equation, mostly design approaches are based on linear model.
 															
 								
-**Dynamic modeling of a magnetic levitation system (MLS) :**
+**Dynamic modeling of a magnetic levitation system (MLS)**
 								
 MLS consists of a ferromagnetic ball , suspended in a voltage controlled magnetic field. Ferromagnetic core coil acts as an actuator, sensor determines the position of the ball with respect to the core coil.
 Fig. 1 shows the schematic diagram of the studied MLS which consists of magnetic levitation mechanical unit (electromagnet, sensors, and ferromagnetic ball) with a computer
@@ -138,7 +138,7 @@ Control input voltage level (<span class="fontCss3">u</span>) &plusmn; 5 V
 Sensor output voltage level (<span class="fontCss3">x<sub>v</sub></span>) +1.25 V to -3.75 V
 
 
-**Plant Control:**
+**Plant Control**
 								
 A general schematic of a simple control closed loop system is presented in Fig. 3.<br/><br/>
 <div align ="center">
@@ -161,22 +161,22 @@ There are a lot of controller design and tuning methods. All of them consider th
 the assumed system characteristics. With the known plant transfer function <span class="fontCss3">G</span><span class="fontCss2">(s)</span> it is possible to find satisfactory parameters of the <span class="fontCss3">C</span><span class="fontCss2">(s)</span> controller such that 
 the closed loop system will have the desired characteristics described by the transfer function <span class="fontCss3">T<sub>c</sub></span><span class="fontCss2">(s)</span> :<br/><br/>
 
-$$T_c(s) = \frac{C(s). G(s)}{1 + C(s) . G(s)}$$
+$$T_c(s) = \frac{C(s). G(s)}{1 + C(s) . G(s)} \tag{11}$$
  
  
-**PID Controller:**
+**PID Controller**
 								
 A PID controller consists of 3 blocks: Proportional, Integral and Derivative. The equation governing the PID controller is as follows :<br/><br/>
 								
-$$u(t) = k_p. e(t) + k_i.\int{e(t)}dt + k_d \frac{de(t)}{dt}$$
+$$u(t) = k_p. e(t) + k_i.\int{e(t)}dt + k_d \frac{de(t)}{dt} \tag{12}$$
 
-$$e(t) = y_{desired}(t) - y(t)$$
+$$e(t) = y_{desired}(t) - y(t) \tag{13}$$
 
 With the means of laplace transform such a structure can be represented as a transfer function:<br/>
 
-$$U(s) = ( k_p + \frac{k_i}{s} + k_d.s ). E(s)$$
+$$U(s) = ( k_p + \frac{k_i}{s} + k_d.s ). E(s) \tag{14}$$
 
-$$C(s) = \frac{U(s)}{E(s)} = (k_p +\frac{k_i}{s} + k_d.s) = \frac{k_ds^2 + k_ps + k_i}{s}$$		
+$$C(s) = \frac{U(s)}{E(s)} = (k_p +\frac{k_i}{s} + k_d.s) = \frac{k_ds^2 + k_ps + k_i}{s} \tag{15}$$		
 								
 <div align="center">
 <img alt="" src="./images/PID.png" class="img-fluid"></br>
