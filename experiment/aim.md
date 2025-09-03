@@ -1,3 +1,3 @@
 ### Aim of the experiment
-1. To study the PID control using Magnetic Levitation.
+1. Controlling the magnetic levitation control system using PID controller.
                 
