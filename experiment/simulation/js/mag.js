@@ -4,7 +4,7 @@
 					  
 		 		window.onload= function(){
 					
-					alert('Desktop mode in chrome is preferable or rotate the screen for better view ');
+					alert('Use chrome in a Desktop/Laptop for better performance.');
 					
 				}	  
 
@@ -79,8 +79,37 @@
 	
 	
 	function IR_ON(){
-	document.getElementById('run_btn').src = "images/pause.png";		
-		
+	if(document.getElementById('changeplot').value == 0 && document.getElementById('stepsize').value >=1 && document.getElementById('stepsize').value <=5 && document.getElementById('steptime').value >=1 && document.getElementById('steptime').value <=25 && document.getElementById('totaltime').value >=10 && document.getElementById('totaltime').value <=50){
+	
+	document.getElementById('run_btn').src = "images/pause.png";
+	document.getElementById('totaltime'). readOnly = true;
+	
+	}
+	else if(document.getElementById('changeplot').value == 1 && document.getElementById('sinamp').value >=1 && document.getElementById('sinamp').value <=5 && document.getElementById('sinfreq').value >=0.1 && document.getElementById('sinfreq').value <=1 && document.getElementById('totaltime').value >=10 && document.getElementById('totaltime').value <=50){
+	document.getElementById('run_btn').src = "images/pause.png";
+	document.getElementById('totaltime'). readOnly = true;
+	}
+	else if(document.getElementById('changeplot').value == 2 && document.getElementById('sqramp').value >=1 && document.getElementById('sqramp').value <=5 && document.getElementById('sqrfreq').value >=0.01 && document.getElementById('sqrfreq').value <=0.1 && document.getElementById('totaltime').value >=10 && document.getElementById('totaltime').value <=50){
+	document.getElementById('run_btn').src = "images/pause.png";
+	document.getElementById('totaltime'). readOnly = true;
+	}
+	else if(document.getElementById('changeplot').value == 0 && (document.getElementById('stepsize').value <1 || document.getElementById('stepsize').value >5 || document.getElementById('steptime').value <1 || document.getElementById('steptime').value >25)){
+	
+		alert('Follow the instructions. Recheck the ranges of Step size and Step time.');
+	
+	}
+	else if(document.getElementById('changeplot').value == 1 && (document.getElementById('sinamp').value <1 || document.getElementById('sinamp').value >5 || document.getElementById('sinfreq').value <0.1 || document.getElementById('sinfreq').value >1)){
+	alert('Follow the instructions. Recheck the ranges of Amplitude and Frequency.');
+	}
+	
+	else if(document.getElementById('changeplot').value == 2 && (document.getElementById('sqramp').value <1 || document.getElementById('sqramp').value >5 || document.getElementById('sqrfreq').value <0.01 || document.getElementById('sqrfreq').value >0.1)){
+	alert('Follow the instructions. Recheck the ranges of Amplitude and Frequency.');
+	}
+	
+	else if(document.getElementById('totaltime').value <10 || document.getElementById('totaltime').value >50){
+		alert('Follow the instructions. Recheck the range of Desired time of simmulation.');
+	}
+	
 	}
 	
 	/*function back_img(){
@@ -111,17 +140,55 @@
 	}*/
 	
 	function IB(){
+		if(document.getElementById('changeplot').value == 0 && document.getElementById('stepsize').value >=1 && document.getElementById('stepsize').value <=5 && document.getElementById('steptime').value >=1 && document.getElementById('steptime').value <=25 && document.getElementById('totaltime').value >=10 && document.getElementById('totaltime').value <=50){
+	
 		setTimeout(function(){
-		alert('Successfull completion of build procedure for the model : Maglev_PID');	
+		alert('Successfull completion of build procedure for the model : Maglev_PID');
+document.getElementById('c1').style.display  = "block";		
 		},2000)
 		
+		}
+		else if(document.getElementById('changeplot').value == 1 && document.getElementById('sinamp').value >=1 && document.getElementById('sinamp').value <=5 && document.getElementById('sinfreq').value >=0.1 && document.getElementById('sinfreq').value <=1 && document.getElementById('totaltime').value >=10 && document.getElementById('totaltime').value <=50){
+	
+		setTimeout(function(){
+		alert('Successfull completion of build procedure for the model : Maglev_PID');
+document.getElementById('c1').style.display  = "block";		
+		},2000)
+		
+		}
+		
+		else if(document.getElementById('changeplot').value == 2 && document.getElementById('sqramp').value >=1 && document.getElementById('sqramp').value <=5 && document.getElementById('sqrfreq').value >=0.01 && document.getElementById('sqrfreq').value <=0.1 && document.getElementById('totaltime').value >=10 && document.getElementById('totaltime').value <=50){
+	
+		setTimeout(function(){
+		alert('Successfull completion of build procedure for the model : Maglev_PID');
+document.getElementById('c1').style.display  = "block";		
+		},2000)
+		
+		}
+		
+		else if(document.getElementById('changeplot').value == 0 && (document.getElementById('stepsize').value <1 || document.getElementById('stepsize').value >5 || document.getElementById('steptime').value <1 || document.getElementById('steptime').value >25)){
+	
+		alert('Follow the instructions. Recheck the ranges of Step size and Step time.');
+	
 	}
+	else if(document.getElementById('changeplot').value == 1 && (document.getElementById('sinamp').value <1 || document.getElementById('sinamp').value >5 || document.getElementById('sinfreq').value <0.1 || document.getElementById('sinfreq').value >1)){
+	alert('Follow the instructions. Recheck the ranges of Amplitude and Frequency.');
+	}
+	
+	else if(document.getElementById('changeplot').value == 2 && (document.getElementById('sqramp').value <1 || document.getElementById('sqramp').value >5 || document.getElementById('sqrfreq').value <0.01 || document.getElementById('sqrfreq').value >0.1)){
+	alert('Follow the instructions. Recheck the ranges of Amplitude and Frequency.');
+	}
+else if(document.getElementById('totaltime').value <10 || document.getElementById('totaltime').value >50){
+		alert('Follow the instructions. Recheck the range of Desired time of simmulation.');
+	}	
+	}
+	
 	function CT(){		
 		setTimeout(function() {
 			alert('Model Maglev_PID is loaded');
          document.getElementById('run_btn').style.display  = "block";
-         document.getElementById('m_scope').style.display  = "block";
-		 document.getElementById('v_scope').style.display  = "block";		 
+         /* document.getElementById('m_scope').style.display  = "block";
+		 document.getElementById('v_scope').style.display  = "block"; */		 
            }, 2000);
 	}
 	
@@ -158,6 +225,36 @@
      PID_SQR_VOLT();
 	 
 	}		
+	}
+	
+	///new added function to show both the plots for better synchronisation after DXP review
+	function scope(){
+	 var a = document.getElementById('changeplot').value;
+    if(document.getElementById('changeplot').value == 0){
+	//if(document.getElementById('stepsize').value >=1 && document.getElementById('stepsize').value <=5 && document.getElementById('steptime').value >=1 && document.getElementById('steptime').value <=25){
+	 PID_STEP();
+	 PID_STEP_VOLT();
+	//}
+	//else{
+	//	alert('Follow the instructions. Recheck the ranges of Step size and Step time.');
+	//}
+	}	
+	else if(document.getElementById('changeplot').value == 1){
+	//if(document.getElementById('sinamp').value >=1 && document.getElementById('sinamp').value <=5 && document.getElementById('sinfreq').value >=0.01 && document.getElementById('sinfreq').value <=1){
+     PID_SINE();
+	 PID_SINE_VOLT();
+	//}
+	//else{
+	//	alert('Follow the instructions. Recheck the ranges of Amplitude and Frequency.');
+	//}
+	}
+	else if(document.getElementById('changeplot').value == 2){
+	//if(document.getElementById('sqramp').value >=1 && document.getElementById('sqramp').value <=5 && document.getElementById('sqrfreq').value >=0.01 && document.getElementById('sqrfreq').value <=1){
+     PID_SQR();
+	 PID_SQR_VOLT();
+	}
+	
+		
 	}
 	
 /////////////////Function for bouncing the ball////////////////////
@@ -203,10 +300,13 @@ setTimeout(function() {
 	
 	document.getElementById('red_div').classList.remove("ballfall");
   document.getElementById('ball_container').classList.remove("divup");
-}, 8000);
+}, 9990);
 
 setTimeout (function(){
 document.getElementById('run_btn').src = "images/run.png";
+document.getElementById('run_btn').style.display = "none";
+document.getElementById('c1').style.display = "none";
+document.getElementById('totaltime'). readOnly = false;
 },10010);	
 }
 
@@ -219,10 +319,13 @@ setTimeout(function() {
   document.getElementById('red_div').classList.add("ballfall");
   document.getElementById('ball_container').classList.add("divup");
     
-}, 8000);
+}, 9990);
 
 setTimeout (function(){
 document.getElementById('run_btn').src = "images/run.png";
+document.getElementById('run_btn').style.display = "none";
+document.getElementById('c1').style.display = "none";
+document.getElementById('totaltime'). readOnly = false;
 },10010);	
 }
 
@@ -247,11 +350,13 @@ function drop(ev) {
 	  
 	ev.target.appendChild(document.getElementById(data));
 	ball_Anim();
+	scope();
 	ballfall();	
   }
   else if(data == "Redball" && ev.target.id == "red_div" && document.getElementById('run_btn').src.match('images/pause.png')){
 	ev.target.appendChild(document.getElementById(data));
 	ball_Anim();
+	scope();
 	ballfall2();	
   }
   else{
@@ -261,158 +366,7 @@ function drop(ev) {
   }
   
 }
-///////////////////////////PD+PID////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-		  
-/*function MAGLEV_STEP(){
-	var i = math.sqrt(-1);
-	document.getElementById('exportChart').style.display="block";
-	var y = new Array();	
-	var dataPoints=[];
-	
-	for (var t=0;t<=50;t+=0.1){
-	/////////////////////////////////////PD STEP RESPONSE UPTO 15 SEC//////////////////////	
-	for( var t=0; t<=15;t+=0.1){
-     
-	 var totalfrstprt_pd = 1.41907;
-	var num2_pd = math.complex(0.709535,0.347901);
-	var expcomp1_pd = math.complex(-55.365,-46.2246);
-	var expcomp1t_pd = math.multiply(expcomp1_pd,t);
-	var exp1_pd = math.pow(math.e,expcomp1t_pd);
-	var num3_pd = math.complex(0.612361,-0.790578);
-	var expcomp2_pd = math.complex(0,92.4493);
-	var expcomp2t_pd = math.multiply(expcomp2_pd,t);
-	var exp2_pd = math.pow(math.e,expcomp2t_pd);
-	var scndprt3_pd = math.add(num3_pd,exp2_pd);
-	var totalscndprt_pd = math.multiply(num2_pd,exp1_pd,scndprt3_pd);
-	
-	y[t] = math.subtract(totalfrstprt_pd,totalscndprt_pd);//assuming step size 1v i.e 0.006m or approximately 0.01m.
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in paper the sensor gain or v-m relation is = 143.14v/m i.e 144.14v = 1m OR 1v = 1/144.14 m,now in m
-	
-    } 
-	 /////////////////////////////////////PID STEP RESPONSE AFTER 15 SEC TO 50 SEC//////////////////////
-	 for(  t=15; t<=50;t+=0.1){
-		 
-	 var num1_pid = math.complex(-0.721536 , -0.356075 );
-	 var num2_pid = math.complex(-54.7083  , -45.4455  );
-	 var num3_pid = math.complex(0.608315,-0.793696);
-	 var num4_pid = math.complex(0,90.891);	 
-	
-	var epow1_pid = math.multiply(num2_pid,t);
-	var exp1_pid  = math.pow(math.e,epow1_pid);
-	var frstcomp_pid = math.multiply(num1_pid,exp1_pid);
-
-    var epow2_pid = math.multiply(num4_pid,t);
-    var exp2_pid  = math.pow(math.e,epow2_pid);
-	var scndcomp_pid = math.add(num3_pid,exp2_pid);
-	
-	var totalfrstprt_pid = math.multiply(frstcomp_pid , scndcomp_pid);
-	
-	var exp3_pid = math.pow(math.e,(-1.31345 * t));
-	var totalscndprt_pid = math.multiply(0.443072,exp3_pid);
-	
-	y[t]= (totalfrstprt_pid+totalscndprt_pid+1);//assuming step size 1v.
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-		 
-	 
-	 //document.write (totalscndprt);
-	 }
-	}
-	 var chart = new CanvasJS.Chart("chartContainer",
-    {
-      animationEnabled: true,
-		  animationDuration: 10000, 
-	  title:{
-      text: "Step Response of MAGLEV Plant"
-	  
-      },
-	  
-	  axisX:{
-        interlacedColor: "#E0FDE4",
-        title: "Time(Sec)"
-      },
-	  axisY: {
-            title: "Amplitude(m)",
-			
-			maximum:0.08,
-        },
-      data: [
-      {        
-        type: "spline",
-		color:"#49C258",
-        dataPoints:dataPoints
-	
-	//document.getElementById('chk_complex_numbers').value = c;
-}
-      ]
-    });
-
-    chart.render();
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});
-  	
-}
-//////////////////////Maglev PD control for step input//////////
-
-/*function PD_Step_Plot(){
-	
-	var i = math.sqrt(-1);
-	var y = new Array();	
-	var dataPoints=[];
-	
-	for( var t=0; t<=50;t+=0.1){
-	var totalfrstprt = 1.41907;
-	var num2 = math.complex(0.709535,0.347901);
-	var expcomp1 = math.complex(-55.365,-46.2246);
-	var expcomp1t = math.multiply(expcomp1,t);
-	var exp1 = math.pow(math.e,expcomp1t);
-	var num3 = math.complex(0.612361,-0.790578);
-	var expcomp2 = math.complex(0,92.4493);
-	var expcomp2t = math.multiply(expcomp2,t);
-	var exp2 = math.pow(math.e,expcomp2t);
-	var scndprt3 = math.add(num3,exp2);
-	var totalscndprt = math.multiply(num2,exp1,scndprt3);
-	y[t] = 1*(math.subtract(totalfrstprt,totalscndprt));//assuming step size 1v.
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m
-		 
-	 
-	 //document.write (totalscndprt);
-	 }
-	 var chart = new CanvasJS.Chart("chartContainer",
-    {
-      animationEnabled: true,
-		  animationDuration: 10000, 
-	  title:{
-      text: "Step Response of MAGLEV Plant with "
-	  
-      },
-	  
-	  axisX:{
-        interlacedColor: "#E0FDE4",
-        title: "Time(Sec)"
-      },
-	  axisY: {
-            title: "Amplitude(m)",
-			
-			//maximum:0.0018,
-        },
-      data: [
-      {        
-        type: "spline",
-		color:"#49C258",
-        dataPoints:dataPoints
-	
-	//document.getElementById('chk_complex_numbers').value = c;
-}
-      ]
-    });
-
-    chart.render();
-}
-*/	
-	
 
 	
 	function PID_STEP(){///////////for amplitude in meter//////////////
@@ -494,7 +448,7 @@ function drop(ev) {
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time (sec)"
+        title: ""
       },
     axisY: [
 	      {/////output Y axis
@@ -513,16 +467,16 @@ function drop(ev) {
 		],
 	data: [
       { 
-		showInLegend: true,
-		legendText: "Output Curve",
+		//showInLegend: true,
+		//legendText: "Output Curve",
         type: "spline",
 		color:"black",
         dataPoints:dataOPPoints
 	
        },
        { 
-		showInLegend: true,
-		legendText: "Input Curve",
+		//showInLegend: true,
+		//legendText: "Input Curve",
         type: "spline",
 		color:"red",
         dataPoints:dataPoints
@@ -534,8 +488,8 @@ function drop(ev) {
 	chart.render();	
 	document.getElementById("result").style.display = "block";
 	document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});	
+	/* document.getElementById("exportChart").addEventListener("click",function(){
+	chart.exportChart({format: "jpg"})}); */	
 		
 	}
 	
@@ -607,13 +561,13 @@ function drop(ev) {
 	 }
 	}
 document.getElementById('plotbucket').style.display  = "block"; 	
-document.getElementById('chartContainer').style.display  = "block"; 	
-	var chart = new CanvasJS.Chart("chartContainer",
+document.getElementById('chartContainer2').style.display  = "block"; 	
+	var chart = new CanvasJS.Chart("chartContainer2",
     {
       animationEnabled: true,
 		  animationDuration: 10000, 
 	  title:{
-      text: "Step Response of MAGLEV Plant with PID Controller "
+      text: ""
 	  
       },
 	  
@@ -659,8 +613,8 @@ document.getElementById('chartContainer').style.display  = "block";
 	chart.render();
 document.getElementById("result").style.display = "block";	
 	document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});	
+	/* document.getElementById("exportChart").addEventListener("click",function(){
+	chart.exportChart({format: "jpg"})}); */	
 		
 	}	
 	
@@ -741,7 +695,7 @@ document.getElementById("result").style.display = "block";
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time (sec)"
+        title: ""
       },
     axisY: [
 	      {/////output Y axis
@@ -760,16 +714,16 @@ document.getElementById("result").style.display = "block";
 		],
 	data: [
       { 
-		showInLegend: true,
-		legendText: "Output Curve",
+		//showInLegend: true,
+		//legendText: "Output Curve",
         type: "spline",
 		color:"black",
         dataPoints:dataOPPoints
 	
        },
        { 
-		showInLegend: true,
-		legendText: "Input Curve",
+		//showInLegend: true,
+		//legendText: "Input Curve",
         type: "spline",
 		color:"red",
         dataPoints:dataPoints
@@ -781,8 +735,8 @@ document.getElementById("result").style.display = "block";
 	chart.render();
 	document.getElementById("result").style.display = "block";
 document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});	
+	/* document.getElementById("exportChart").addEventListener("click",function(){
+	chart.exportChart({format: "jpg"})}); */	
 	}
 	
 	
@@ -849,13 +803,13 @@ document.getElementById("exportChart").style.display = "block";
 	 
 	}
 	document.getElementById('plotbucket').style.display  = "block"; 
- 	document.getElementById('chartContainer').style.display  = "block"; 
-	var chart = new CanvasJS.Chart("chartContainer",
+ 	document.getElementById('chartContainer2').style.display  = "block"; 
+	var chart = new CanvasJS.Chart("chartContainer2",
     {
       animationEnabled: true,
 		  animationDuration: 10000, 
 	  title:{
-      text: "Sinusoidal Response of MAGLEV Plant with PID Controller "
+      text: ""
 	  
       },
 	  
@@ -901,8 +855,8 @@ document.getElementById("exportChart").style.display = "block";
 	chart.render();
 	document.getElementById("result").style.display = "block";
 document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});	
+	/* document.getElementById("exportChart").addEventListener("click",function(){
+	chart.exportChart({format: "jpg"})}); */	
 	}
 	
 	///testing square wave in volt
@@ -959,7 +913,7 @@ document.getElementById("exportChart").style.display = "block";
 	
 	for (var nc = 0; nc < math.divide(cyclehlfs,2); nc+=1) {
     for (var t = math.multiply(nc,tperiod); t <= math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t++) {
-		
+	if(t<=totalT){	
 	var part1 = coeff1;
 	var part2 = math.multiply(coeff2,math.pow(math.e,math.multiply(pol1,t)));
 	var part3 = math.multiply(coeff3,math.pow(math.e,math.multiply(pol2,t)));
@@ -970,62 +924,44 @@ document.getElementById("exportChart").style.display = "block";
 	
 	dataPoints.push({x:(t), y:(y[t]*1000)});///y[t] was in v, in m the gain is 143.14v/m,now in m
 	dataOPPoints.push({x:(t), y:(yop[t]*1000)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
+	} 
 	 }
 	 
 	 //for( var t= math.divide(totalT,4); t<= math.divide(totalT,2); t++){////20 sec is sample time
-	 for (var t = math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t<= math.multiply(2,math.divide(totalT,cyclehlfs),math.add(((2*nc)/2),1)); t++) {
-		
-	y[t]= 0;//assuming final value of 0v.Input plot
-	yop[t]=0;//assuming final value of 0v.Output plot
-	dataPoints.push({x:(t), y:(y[t])});///y[t] is in v
-	dataOPPoints.push({x:(t), y:(yop[t])});///yop[t] is in v	 
 	 
-	 //document.write (totalscndprt);
-	 }
-	 }
-	
-	/* for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4) ; t+=0.1){////20 sec is sample time
-	
-	var part1 = coeff1;
+	 for (var t = math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t<= math.multiply(2,math.divide(totalT,cyclehlfs),math.add(((2*nc)/2),1)); t++) {
+		if(t<=totalT){
+			var part1 = coeff1;
 	var part2 = math.multiply(coeff2,math.pow(math.e,math.multiply(pol1,t)));
 	var part3 = math.multiply(coeff3,math.pow(math.e,math.multiply(pol2,t)));
 	var part4 = math.multiply(coeff4,math.pow(math.e,math.multiply(pol3,t)));
+	y[t]= -sqrv;//assuming final value of 0v.Input plot
+	yop[t]=-(math.add(part1,part2,part3,part4)).re;;//assuming final value of 0v.Output plot
+	dataPoints.push({x:(t), y:(y[t]*1000)});///y[t] is in v
+	dataOPPoints.push({x:(t), y:(yop[t]*1000)});///yop[t] is in v
+		}
 	
-	y[t]= sqrv;//assuming step size 1v.Input plot
-	yop[t]= (math.add(part1,part2,part3,part4)).re;
-	
-	dataPoints.push({x:(t), y:(y[t]*1000)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-	dataOPPoints.push({x:(t), y:(yop[t]*1000)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
-	 } 
-	 
-	for( var t= math.divide(math.multiply(3,totalT),4); t<= totalT; t++){////20 sec is sample time
-	
-	y[t]= 0;//assuming final value of 0v.Input plot
-	yop[t]=0;//assuming final value of 0v.Output plot
-	dataPoints.push({x:(t), y:(y[t])});///y[t] is in v
-	dataOPPoints.push({x:(t), y:(yop[t])});///yop[t] is in v	 
 	 
 	 //document.write (totalscndprt);
-	 } 
+	 }
+	 }
 	
-	 
-	} */
+	
 document.getElementById('plotbucket').style.display  = "block"; 	
-document.getElementById('chartContainer').style.display  = "block"; 	
-	var chart = new CanvasJS.Chart("chartContainer",
+document.getElementById('chartContainer2').style.display  = "block"; 	
+	var chart = new CanvasJS.Chart("chartContainer2",
     {
       animationEnabled: true,
 		  animationDuration: 10000, 
 	  title:{
-      text: "Square wave Response of MAGLEV Plant with PID Controller "
+      text: ""
 	  
       },
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time (sec)"
+        title: "Time (sec)",
+		minimum:0
       },
     axisY: [
 	      {/////output Y axis
@@ -1048,6 +984,7 @@ document.getElementById('chartContainer').style.display  = "block";
 		legendText: "Output Curve",
         type: "spline",
 		color:"black",
+		markerSize:0,
         dataPoints:dataOPPoints
 	
        },
@@ -1056,6 +993,7 @@ document.getElementById('chartContainer').style.display  = "block";
 		legendText: "Input Curve",
         type: "spline",
 		color:"red",
+		markerSize:0,
         dataPoints:dataPoints
 	
        },
@@ -1065,8 +1003,8 @@ document.getElementById('chartContainer').style.display  = "block";
 	chart.render();
 document.getElementById("result").style.display = "block";	
 	document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});	
+	/* document.getElementById("exportChart").addEventListener("click",function(){
+	chart.exportChart({format: "jpg"})}); */	
 		
 	}	
 	
@@ -1121,7 +1059,7 @@ document.getElementById("result").style.display = "block";
 	//for( var t=0.1; t<= math.divide(totalT,4);t+=0.1 ){////20 sec is sample time
 	for (var nc = 0; nc < math.divide(cyclehlfs,2); nc+=1) {
     for (var t = math.multiply(nc,tperiod); t <= math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t++) {
-		
+	if(t<=totalT){	
 	var part1 = coeff1;
 	var part2 = math.multiply(coeff2,math.pow(math.e,math.multiply(pol1,t)));
 	var part3 = math.multiply(coeff3,math.pow(math.e,math.multiply(pol2,t)));
@@ -1132,47 +1070,26 @@ document.getElementById("result").style.display = "block";
 	
 	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
 	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
+	} 
 	 //document.write (totalscndprt);
 	 }
 	 
 	 //for( var t= math.divide(totalT,4); t<= math.divide(totalT,2);t++){////20 sec is sample time
 	for (var t = math.multiply(math.add(math.multiply(nc,2),1),math.divide(totalT,cyclehlfs)); t<= math.multiply(2,math.divide(totalT,cyclehlfs),math.add(((2*nc)/2),1)); t++) {
-		
-	y[t]= 0;//assuming final value of 0v.Input plot
-	yop[t]=0;//assuming final value of 0v.Output plot
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
-	 //document.write (totalscndprt);
-	 }
-	 }
-	/* for( var t= math.divide(totalT,2); t<= math.divide(math.multiply(3,totalT),4);t+=0.1 ){////25 sec is sample time
-	
+	if(t<=totalT){
 	var part1 = coeff1;
 	var part2 = math.multiply(coeff2,math.pow(math.e,math.multiply(pol1,t)));
 	var part3 = math.multiply(coeff3,math.pow(math.e,math.multiply(pol2,t)));
-	var part4 = math.multiply(coeff4,math.pow(math.e,math.multiply(pol3,t)));
-	
-	y[t]= sqrv;//assuming step size 1v.Input plot
-	yop[t]= (math.add(part1,part2,part3,part4)).re;
-	
+	var part4 = math.multiply(coeff4,math.pow(math.e,math.multiply(pol3,t)));	
+	y[t]= -sqrv;//assuming final value of 0v.Input plot
+	yop[t]= -(math.add(part1,part2,part3,part4)).re;;//assuming final value of 0v.Output plot
 	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
 	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
+	}
 	 //document.write (totalscndprt);
-	 } 
-	for( var t= math.divide(math.multiply(3,totalT),4); t<= totalT;t++){////25 sec is sample time
+	 }
+	 }
 	
-	y[t]= 0;//assuming final value of 0v.Input plot
-	yop[t]=0;//assuming final value of 0v.Output plot
-	dataPoints.push({x:(t), y:(y[t]/143.14)});///y[t] was in v, in m the gain is 143.14v/m,now in m
-	dataOPPoints.push({x:(t), y:(yop[t]/143.14)});///yop[t] was in v, in m the gain is 143.14v/m,now in m	 
-	 
-	 //document.write (totalscndprt);
-	 } 
-	
-	} */
 	document.getElementById('plotbucket').style.display  = "block"; 
     document.getElementById('chartContainer').style.display  = "block"; 	
 	var chart = new CanvasJS.Chart("chartContainer",
@@ -1186,7 +1103,8 @@ document.getElementById("result").style.display = "block";
 	  
 	  axisX:{
         interlacedColor: "#DFDEDE",
-        title: "Time (sec)"
+        title: "",
+		minimum:0
       },
     axisY: [
 	      {/////output Y axis
@@ -1205,18 +1123,20 @@ document.getElementById("result").style.display = "block";
 		],
 	data: [
       {
-		showInLegend: true,
-		legendText: "Output Curve",
+		//showInLegend: true,
+		//legendText: "Output Curve",
         type: "spline",
 		color:"black",
+		markerSize:0,
         dataPoints:dataOPPoints
 	
        },
        {
-		showInLegend: true,
-		legendText: "Input Curve",
+		//showInLegend: true,
+		//legendText: "Input Curve",
         type: "spline",
 		color:"red",
+		markerSize:0,
         dataPoints:dataPoints
 	
        },
@@ -1226,8 +1146,8 @@ document.getElementById("result").style.display = "block";
 	chart.render();	
 	document.getElementById("result").style.display = "block";
 	document.getElementById("exportChart").style.display = "block";
-	document.getElementById("exportChart").addEventListener("click",function(){
-	chart.exportChart({format: "jpg"})});	
+	/* document.getElementById("exportChart").addEventListener("click",function(){
+	chart.exportChart({format: "jpg"})}); */	
 		
 	}
 	
@@ -1243,17 +1163,53 @@ document.getElementById('sqrfreq').value = math.divide(1,math.divide(Ttime,2));
 
 }
 
+///code for downloading the plot area
+function saveAs(uri, filename) {
 
+    var link = document.createElement('a');
+
+    if (typeof link.download === 'string') {
+
+        link.href = uri;
+        link.download = filename;
+
+        //Firefox requires the link to be in the body
+        document.body.appendChild(link);
+
+        //simulate click
+        link.click();
+
+        //remove the link when done
+        document.body.removeChild(link);
+
+    } else {
+
+        window.open(uri);
+
+    }
+}
+
+function saveImg(){
+html2canvas(document.querySelector('#plotbucket')).then(function(canvas) {
+
+        saveAs(canvas.toDataURL(), 'Plot.png');
+    }); 
+	
+	
+}
 	
 	
 	///Refresh
 	function Refresh(){
 		
 	document.getElementById('plotbucket').style.display = "none";
+	document.getElementById('exportChart').style.display = "none";
+	document.getElementById('result').style.display = "none";
 	document.getElementById('run_btn').src = "./images/run.png ";
 	document.getElementById('run_btn').style.display = "none";
-	document.getElementById('m_scope').style.display = "none";
-	document.getElementById('v_scope').style.display = "none";
+	document.getElementById('c1').style.display = "none";
+	//document.getElementById('m_scope').style.display = "none";
+	//document.getElementById('v_scope').style.display = "none";
 	}
 	
 	
