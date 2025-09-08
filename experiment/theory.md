@@ -80,13 +80,7 @@ A linearization is done at the equilibrium point of
 <span class="fontCss3">x<sub>0</sub></span> = -1.5 V (the position is expressed in volts), 
 <span class="fontCss3">i<sub>0</sub></span> = 0.8 A
 
-<!--$$\ddot{x} = g - f(x,i) , f(x,i) = k\frac{i^2}{m . x^2}$$
-
-Equilibrium point can be calculated from:
-
-$$g = f(x,i) at \ (i_0, x_0)$$-->
-
-The linearization steps are the following<br/>
+The linearization steps are the following
 
 $$\ddot{x} = -(\frac{\delta f(i,x)}{\delta i} |_{i_0,x_0} \Delta i + \frac{\delta f(i,x)}{\delta x} |_{i_0,x_0} \Delta x ), \tag 6$$
 
