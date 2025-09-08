@@ -1,0 +1,532 @@
+/*-----Document Name: MAGLEV .css
+       Author Name  : Piyali Chattopadhyay
+	                  RE VLABS, IIT KGP-------------*/
+					  
+					  
+/*.custombutton{
+	padding:3px 3px ;
+	width:150px;
+	height:30px;
+	color:white;
+	border: none;
+	border-radius:0px;
+	background-color: #4CAF50;
+	
+	}
+	.custombutton:hover{background-color: #CEEF9C;}
+	.custombutton:active{background-color: #8FBD4A;}
+	
+	.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: absolute;
+  
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+ 
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
+
+.img-container {
+    display: inline-block;
+    position: relative;
+}
+
+ #b1{
+position: absolute;
+    top: 5%;
+    left: 84%;
+    width: 4.5%;
+    height: 7%;
+ } 
+
+#c1{
+	display:none;
+position: absolute;
+    top: 6.2%;
+    left: 69%;/* 54%; */
+    width: 4%;
+    height: 4%;
+ }
+ #totaltime{
+position: absolute;
+    top: 6.2%;
+    left: 44.5%;/* 58.5%; */
+    width: 7%;
+    height: 5%;
+ }
+
+#run_btn{
+display:none;
+/* position: absolute;
+    top: 2%;
+    left: 68%;/* 51%; */
+    /* width: 3%;
+    height: 4%; */
+	position: absolute;
+    top: 7%;
+    left: 15%;
+    width: 3%;
+    height: 4%;
+ }  
+
+#m_scope{
+display: none;
+   /*  position: absolute;
+    top: 52%;
+    left: 90%;
+    width: 8%;
+    height: 11%; */
+	position: absolute;
+    top: 53%;
+    left: 88%;
+    width: 7%;
+    height: 10%;
+ } 
+
+#v_scope{
+display: none;
+    /* position: absolute;
+    top: 71%;
+    left: 58%;
+    width: 8%;
+    height: 11%; */
+	position: absolute;
+    top: 73.8%;
+    left: 61%;
+    width: 7%;
+    height: 10%;
+ } 
+
+#step_block{
+position:absolute;
+display:none;
+width:20%;
+height:20%;
+left:20%;
+top:20%;
+border:3px solid blue;
+border-top-width:10px;
+border-radius:3px;
+background-color:white;	
+}
+
+#sin_block{
+position:absolute;
+display:none;
+width:20%;
+height:20%;
+left:20%;
+top:20%;
+border:3px solid blue;
+border-top-width:10px;
+border-radius:3px;	
+background-color:white;
+}
+
+#sqr_block{
+position:absolute;
+display:none;
+width:20%;
+height:20%;
+left:20%;
+top:20%;
+border:3px solid blue;
+border-top-width:10px;
+border-radius:3px;	
+background-color:white;
+}
+
+#PID_block{
+position:absolute;
+display:none;
+width:20%;
+height:20%;
+left:20%;
+top:20%;
+border:3px solid blue;
+border-top-width:10px;
+border-radius:3px;
+background-color:white;	
+}
+
+#sin_btn{
+	
+
+    display: block;
+    position: absolute;
+    width: 6%;
+    height: 7%;/* 8%; */
+    left: 5.5%;/* 2.5%; */
+    top: 56%;
+
+}
+
+#step_btn{
+	
+display: block;
+    position: absolute;
+    width: 6%;
+    height: 8%;
+    left: 5.5%;/* 2.5%; */
+    top: 44%;
+
+}
+#sqr_btn{
+	
+/*visibility:hidden;*/
+display: block;
+    position: absolute;
+    width: 6%;
+    height: 7%;/* 8%; */
+    left: 5.5%;/* 2.5%; */
+    top: 66.4%;/* 67%; */
+
+}
+
+#PID_btn{
+	
+display: block;
+    position: absolute;
+    width: 17%;
+    height: 18.2%;
+    left: 50.5%;
+    top: 19%;
+
+}
+#step_block{
+position: absolute;
+    width: 35%;
+    height: 38%;
+    top: 81%;
+    left: 1%;	
+}
+#stepsize{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 28%;
+    left: 4%;	
+}
+#steptime{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 59%;
+    left: 4%;	
+}
+
+#ssp{
+position: absolute;
+    width: 40%;
+    height: 15%;
+    top: 27%;
+    left: 35%;
+	
+}
+#stp{
+position: absolute;
+    width: 60%;
+    height: 14%;
+    top: 57%;
+    left: 29%;
+}	
+
+#sin_block{
+position: absolute;
+    width: 35%;
+    height: 38%;
+    top: 81%;
+    left: 1%;	
+}
+#sinamp{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 28%;
+    left: 4%;	
+}
+#sinfreq{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 59%;
+    left: 4%;	
+}
+
+#sap{
+position: absolute;
+    width: 40%;
+    height: 15%;
+    top: 27%;
+    left: 35%;
+	
+}
+#sfp{
+position: absolute;
+    width: 60%;
+    height: 14%;
+    top: 57%;
+    left: 29%;
+}	
+
+#sqr_block{
+position: absolute;
+    width: 35%;
+    height: 38%;
+    top: 81%;
+    left: 1%;	
+}
+#sqramp{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 28%;
+    left: 4%;	
+}
+#sqrfreq{
+position: absolute;
+    width: 27%;
+    height: 19%;
+    top: 59%;
+    left: 4%;	
+}
+
+#sqap{
+position: absolute;
+    width: 40%;
+    height: 15%;
+    top: 27%;
+    left: 35%;
+	
+}
+#sqfp{
+position: absolute;
+    width: 60%;
+    height: 14%;
+    top: 57%;
+    left: 29%;
+}	
+
+
+
+#PID_block{
+position: absolute;
+    width: 42%;
+    height: 35%;
+    top: 77%;
+    left: -7%;	
+}
+#kp{
+position: absolute;
+    width: 27%;
+    height: 15%;
+    top: 28%;
+    left: 4%;	
+}
+#ki{
+position: absolute;
+    width: 27%;
+    height: 15%;
+    top: 48%;
+    left: 4%;	
+}
+#kd{
+position: absolute;
+    width: 27%;
+    height: 15%;
+    top: 68%;
+    left: 4%;	
+}
+
+#kpp{
+position: absolute;
+    width: 14%;
+    height: 15%;
+    top: 27%;
+    left: 33%;
+	
+}
+#kip{
+position: absolute;
+    width: 14%;
+    height: 15%;
+    top: 48%;
+    left: 33%;
+}	
+#kdp{
+position: absolute;
+    width: 14%;
+    height: 15%;
+    top: 68%;
+    left: 33%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#Redball{
+position: absolute;
+   /* width: 15%;
+    height: 9%;
+    left: 42%;
+    top: 41%;
+}*/
+#ball_container{
+	
+position: absolute;
+    top: 25%;
+    left: 38%;
+    width: 21%;
+    height: 11%;
+    border: 1px dotted none;
+    z-index: 1;
+	
+}
+#red_div{
+	
+position: absolute;
+    top: 39%;
+    left: 38%;
+    width: 21%;
+    height: 11%;
+    border: 1px dotted none;
+    z-index: 1;
+	
+}
+
+/*-----------------------------for ball fall------------------------*/
+.ballfall{
+	animation:ballfall 1.5s linear forwards;	
+}
+
+@keyframes ballfall {
+  from {top: 25%;}/*background-color:white}*/
+  to   {top: 39%;}/*background-color:#0db4fd}*/
+}
+
+/*-----------------------------for div up------------------------*/
+.divup{
+	animation:divup 1.5s linear forwards;	
+}
+
+@keyframes divup {
+  from {top: 39%;}/*background-color:white}*/
+  to   {top: 25%;}/*background-color:#0db4fd}*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#anim{display:-webkit-box;-webkit-box-pack:center;opacity:1.5; duration: 4;}
+
+.bounce {
+  animation: bounce 2s ease 1s;
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
+.fontCss{
+font-family:'Sitka Text';
+font-style: italic;
+}
+.fontCss2{
+font-family:'Bodoni MT';
+font-size:20px;
+}
+.fontCss3{
+font-family:'Bodoni MT';
+font-style: italic;
+font-size:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					  
